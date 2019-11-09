@@ -2795,9 +2795,10 @@ GameObject:
   - component: {fileID: 1021090352}
   - component: {fileID: 1021090351}
   - component: {fileID: 1021090350}
+  - component: {fileID: 1021090354}
   m_Layer: 0
   m_Name: TestPiece1
-  m_TagString: Untagged
+  m_TagString: TestPiece1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2876,6 +2877,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1021090354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021090349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf2a7dbe489bc04fbcf27738be7365e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 0
+  defence: 0
+  range: 0
+  attackSpeed: 0
+  health: 0
 --- !u!4 &1025691591 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8625236873656561067, guid: 9e1ec76b6f148a84b82a604a89cac983,
@@ -3049,9 +3067,10 @@ GameObject:
   - component: {fileID: 1119208647}
   - component: {fileID: 1119208646}
   - component: {fileID: 1119208645}
+  - component: {fileID: 1119208649}
   m_Layer: 0
   m_Name: TestPiece2
-  m_TagString: Untagged
+  m_TagString: TestPiece2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3130,6 +3149,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1119208649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119208644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf2a7dbe489bc04fbcf27738be7365e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 0
+  defence: 0
+  range: 0
+  attackSpeed: 0
+  health: 0
 --- !u!1001 &1147064090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5876,7 +5912,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adf2a7dbe489bc04fbcf27738be7365e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthMax: 0
   attackDamage: 0
   defence: 0
   range: 0
