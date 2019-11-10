@@ -5,13 +5,18 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
 
+
     // varibles all characters use
-    //[SerializeField]
+    [SerializeField]
     private float healthMax;
 
     public float health;
 
-    public float magic;
+    [SerializeField]
+    private float magicMax;
+
+    [SerializeField]
+    private float magic;
 
     [SerializeField]
     private float physicalAttack;
@@ -32,9 +37,6 @@ public class Character : MonoBehaviour
     private float attackSpeed;
 
     [SerializeField]
-    private string attackType;
-
-    [SerializeField]
     private float critAttPercentage;
 
     [SerializeField]
@@ -43,16 +45,10 @@ public class Character : MonoBehaviour
     [SerializeField]
     private float healthRegenPercentage;
 
-    [SerializeField]
-    private string raceType;
-
-    [SerializeField]
-    private string classType;
-
 
     // Tile positions
     public static Vector3 position;
-    public static Vector3 baseSub = new Vector3(0f, .5f, 0);
+    public static Vector3 baseSub = new Vector3(0f, -.5f, 0);
     public static Vector3 basePosition;
 
 
