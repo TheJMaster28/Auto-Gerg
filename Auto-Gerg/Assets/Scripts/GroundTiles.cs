@@ -20,6 +20,8 @@ public class GroundTiles : MonoBehaviour
     [SerializeField]
     private List<GameObject> adjcentTiles = new List<GameObject>();
 
+    public bool edge;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,17 +58,28 @@ public class GroundTiles : MonoBehaviour
         print("row: " + row);
 
         
-        addToList(column - 1, row - 1);
+        if ( edge ) {
+            addToList(column, row + 1);
+            addToList(column + 1, row);
+            addToList(column, row - 1);
+            addToList(column - 1, row);
+        }
 
-        addToList(column, row - 1);
+        else {
+            addToList(column + 1, row - 1);
 
-        addToList(column - 1, row);
+            addToList(column, row - 1);
 
-        addToList(column + 1, row);
+            addToList(column + 1, row);
 
-        addToList(column - 1, row + 1);
+            addToList(column - 1, row);
 
-        addToList(column, row + 1);
+            addToList(column + 1, row + 1);
+
+            addToList(column, row + 1);
+
+        }
+       
 
     }
 

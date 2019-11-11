@@ -12,7 +12,7 @@ public class Board : MonoBehaviour
     
     public GameObject[] tiles;
 
-    private void Start() {
+    private void Awake() {
 
         tiles = new GameObject[rows * colums];
 
@@ -50,7 +50,7 @@ public class Board : MonoBehaviour
 
 
         int num = ((row - 1)  * 8 ) + column;
-
+        print("num: " + num);
         return tiles[ num -1 ];
     }
 
