@@ -14,12 +14,22 @@ public class GroundTiles : MonoBehaviour
 
     public GameObject chessPiece;
 
+    private Board gameBoard;
+    public int boardNumber;
+
+    [SerializeField]
+    private List<GameObject> adjcentTiles = new List<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
         position = this.transform.position;
         topPosition = position + extra;
         //print(position);        testing to make sure that im getting correct position
+        gameBoard = GameObject.FindGameObjectWithTag("Board").GetComponent<Board>();
+        print(gameObject.name);
+        CreateAdjectTileList();
+        
     }
 
     // Update is called once per frame
@@ -37,5 +47,35 @@ public class GroundTiles : MonoBehaviour
         
 
     } // end of update
+
+    void CreateAdjectTileList() { 
+        int column = gameBoard.getBoardColumn(boardNumber);
+        int row = gameBoard.getBoardRow(boardNumber);
+
+        print("column: " + column);
+        print("row: " + row);
+
+        
+        addToList(column - 1, row - 1);
+
+        addToList(column, row - 1);
+
+        addToList(column - 1, row);
+
+        addToList(column + 1, row);
+
+        addToList(column - 1, row + 1);
+
+        addToList(column, row + 1);
+
+    }
+
+
+    void addToList(int column, int row) {
+        if ( column >= 1 && column <= 8 && row >= 1 && row <= 8 ) {
+            adjcentTiles.Add(gameBoard.getTile(column, row));
+        }
+    }
+
 
 } // end of class

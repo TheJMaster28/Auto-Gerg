@@ -7,6 +7,7 @@ TagManager:
   - GroundTile
   - TestPiece1
   - TestPiece2
+  - Board
   layers:
   - Default
   - TransparentFX

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Board : MonoBehaviour
 {
 
@@ -22,17 +23,37 @@ public class Board : MonoBehaviour
 
             for ( int k = 0; k < 8; k++ ) {
                 tiles[tileIndex] = row.transform.GetChild(k).gameObject;
+                row.transform.GetChild(k).gameObject.GetComponent<GroundTiles>().boardNumber = tileIndex +1;
                 tileIndex++;
             }
 
         }
 
-        for (int i =0; i < tiles.Length; i++ ) {
-            print(tiles[i]);
-        }
+        //for (int i =0; i < tiles.Length; i++ ) {
+        //    print(tiles[i]);
+        //}
     }
 
+    public int getBoardRow(int pieceNum) {
+        return (int)Mathf.Ceil(pieceNum / 8.0f);
+    }
+
+    public int getBoardColumn(int pieceNum) {
+        if ( pieceNum % 8  == 0 ) {
+            return 8;
+        }
+        return pieceNum % 8;
+    }
     
+    public GameObject getTile(int column, int row) {
+        print("Board column:" + column + " row: " + row);
+
+
+        int num = ((row - 1)  * 8 ) + column;
+
+        return tiles[ num -1 ];
+    }
+
 }
 
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1329,6 +1329,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9025454280022135856, guid: cb6e0d3097917644d8b22e646c9aadf1,
+        type: 3}
+      propertyPath: boardNumber
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb6e0d3097917644d8b22e646c9aadf1, type: 3}
 --- !u!4 &447352127 stripped
@@ -1741,6 +1746,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050422121129006551, guid: 30b82a88cb425dc4b851eff97401cd9b,
+        type: 3}
+      propertyPath: boardNumber
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30b82a88cb425dc4b851eff97401cd9b, type: 3}
@@ -3041,6 +3051,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9025454280022135856, guid: cb6e0d3097917644d8b22e646c9aadf1,
+        type: 3}
+      propertyPath: boardNumber
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb6e0d3097917644d8b22e646c9aadf1, type: 3}
 --- !u!4 &1099763741 stripped
@@ -3195,6 +3210,11 @@ PrefabInstance:
       propertyPath: thisObject
       value: 
       objectReference: {fileID: 402364232}
+    - target: {fileID: 8304012689259582075, guid: 9e1ec76b6f148a84b82a604a89cac983,
+        type: 3}
+      propertyPath: boardNumber
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e1ec76b6f148a84b82a604a89cac983, type: 3}
 --- !u!4 &1147937030 stripped
@@ -3394,9 +3414,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1253247069}
+  - component: {fileID: 1253247070}
   m_Layer: 0
   m_Name: Gameboard
-  m_TagString: Untagged
+  m_TagString: Board
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3423,6 +3444,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1253247070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253247068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d0115528d1cc4141aa5113145de09ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rows: 8
+  colums: 8
+  tiles: []
 --- !u!4 &1272935835 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6045548395855160802, guid: 30b82a88cb425dc4b851eff97401cd9b,
@@ -4978,6 +5014,11 @@ PrefabInstance:
       propertyPath: objectTopRight
       value: 
       objectReference: {fileID: 1554751534}
+    - target: {fileID: 6050422121129006551, guid: 30b82a88cb425dc4b851eff97401cd9b,
+        type: 3}
+      propertyPath: boardNumber
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30b82a88cb425dc4b851eff97401cd9b, type: 3}
 --- !u!4 &1802696384 stripped
@@ -5749,6 +5790,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8304012689259582075, guid: 9e1ec76b6f148a84b82a604a89cac983,
+        type: 3}
+      propertyPath: boardNumber
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e1ec76b6f148a84b82a604a89cac983, type: 3}
