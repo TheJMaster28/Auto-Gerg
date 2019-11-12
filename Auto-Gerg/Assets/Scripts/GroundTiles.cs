@@ -22,6 +22,9 @@ public class GroundTiles : MonoBehaviour
 
     public bool edge;
 
+
+    public bool evenRow;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,17 +68,53 @@ public class GroundTiles : MonoBehaviour
             addToList(column - 1, row);
         }
 
-        else {
+        else if ( evenRow ) {
+            print("one:");
             addToList(column + 1, row - 1);
 
+            print("two:");
             addToList(column, row - 1);
 
+
+            print("three:");
             addToList(column + 1, row);
 
+
+            print("four:");
             addToList(column - 1, row);
 
+
+            print("five:");
             addToList(column + 1, row + 1);
 
+
+            print("six:");
+            addToList(column, row + 1);
+
+        }
+
+        else {
+
+            print("one:");
+            addToList(column - 1, row - 1);
+
+            print("two:");
+            addToList(column, row - 1);
+
+
+            print("three:");
+            addToList(column + 1, row);
+
+
+            print("four:");
+            addToList(column - 1, row);
+
+
+            print("five:");
+            addToList(column - 1, row + 1);
+
+
+            print("six:");
             addToList(column, row + 1);
 
         }
