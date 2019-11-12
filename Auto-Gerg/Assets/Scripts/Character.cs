@@ -5,24 +5,51 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
 
-    // varibles all characers use
+
+    // varibles all characters use
     [SerializeField]
     private float healthMax;
 
-    [SerializeField]
-    private float attackDamage;
+    public float health;
 
     [SerializeField]
-    private float defence;
+    private float magicMax;
 
     [SerializeField]
-    private int range;
+    private float magic;
+
+    [SerializeField]
+    private float physicalAttack;
+
+    [SerializeField]
+    private float magicaAttack;
+
+    [SerializeField]
+    private float physicalDefence;
+
+    [SerializeField]
+    private float magicDefence;
+
+    [SerializeField]
+    private float attackRange;
 
     [SerializeField]
     private float attackSpeed;
 
-    public float health;
+    [SerializeField]
+    private float critAttPercentage;
 
+    [SerializeField]
+    private float evasionPercentage;
+
+    [SerializeField]
+    private float healthRegenPercentage;
+
+
+    // Tile positions
+    public static Vector3 position;
+    public static Vector3 baseSub = new Vector3(0f, -.5f, 0);
+    public static Vector3 basePosition;
 
 
     // functions for awake and accessing stats
@@ -31,20 +58,26 @@ public class Character : MonoBehaviour
     }
 
     public float getAttackDamage() {
-        return attackDamage;
+        return physicalAttack;
     }
 
     public float getDefence() {
-        return defence;
+        return physicalDefence;
     }
 
-    public int getRange() {
-        return range;
+    public float getRange() {
+        return attackRange;
     }
 
     public float getAttackSpeed() {
         return attackSpeed;
     }
 
+    // Need to have this so I know the position for the piece at all times.
+    public void Update()
+    {
+        position = this.transform.position;
+        basePosition = position + baseSub;
+    }
 
 }
