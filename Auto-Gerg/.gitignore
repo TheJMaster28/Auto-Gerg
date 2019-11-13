@@ -3,7 +3,11 @@
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
 
-/[Ll]ibrary/*
+
+
+/[Ll]ibrary/CurrentLayout-default.dwlt
+/[Ll]ibrary/assetDatabase3
+/[Ll]ibrary/shadercompiler-UnityShaderCompiler.exe0.log
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
