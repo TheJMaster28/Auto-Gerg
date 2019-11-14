@@ -54,13 +54,11 @@ public class GroundTiles : MonoBehaviour
     } // end of update
 
     void CreateAdjectTileList() { 
+        // get column and row of current tile
         int column = gameBoard.getBoardColumn(boardNumber);
         int row = gameBoard.getBoardRow(boardNumber);
-
-        print("column: " + column);
-        print("row: " + row);
-
         
+        // find adjcent tiles based rather it is a edge tile or on an even row
         if ( edge ) {
             addToList(column, row + 1);
             addToList(column + 1, row);
@@ -69,52 +67,22 @@ public class GroundTiles : MonoBehaviour
         }
 
         else if ( evenRow ) {
-            print("one:");
+            
             addToList(column + 1, row - 1);
-
-            print("two:");
             addToList(column, row - 1);
-
-
-            print("three:");
             addToList(column + 1, row);
-
-
-            print("four:");
             addToList(column - 1, row);
-
-
-            print("five:");
             addToList(column + 1, row + 1);
-
-
-            print("six:");
             addToList(column, row + 1);
 
         }
 
         else {
-
-            print("one:");
             addToList(column - 1, row - 1);
-
-            print("two:");
             addToList(column, row - 1);
-
-
-            print("three:");
             addToList(column + 1, row);
-
-
-            print("four:");
             addToList(column - 1, row);
-
-
-            print("five:");
             addToList(column - 1, row + 1);
-
-
-            print("six:");
             addToList(column, row + 1);
 
         }
