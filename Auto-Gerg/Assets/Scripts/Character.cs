@@ -52,6 +52,9 @@ public class Character : MonoBehaviour
     public static Vector3 basePosition;
 
 
+
+    public GameObject Tile;
+
     // functions for awake and accessing stats
     private void Awake() {
         health = healthMax;

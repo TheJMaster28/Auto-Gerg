@@ -8,11 +8,12 @@ public class GroundTiles : MonoBehaviour
 
     private bool tileOccupied = false;
 
-    Vector3 topPosition;
+    public Vector3 topPosition;
     Vector3 position;
     Vector3 extra = new Vector3(0f, 0.2f, 0f);
 
     public GameObject chessPiece;
+    public bool isChessPieceOn;
 
     private Board gameBoard;
     public int boardNumber;
@@ -95,6 +96,10 @@ public class GroundTiles : MonoBehaviour
         if ( column >= 1 && column <= 8 && row >= 1 && row <= 8 ) {
             adjcentTiles.Add(gameBoard.getTile(column, row));
         }
+    }
+
+    public List<GameObject> getAdjcentTiles() {
+        return adjcentTiles;
     }
 
 
