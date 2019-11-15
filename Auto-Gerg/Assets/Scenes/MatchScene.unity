@@ -2476,6 +2476,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4378888575533256573, guid: 2bc0d1a60641c5944becdeebf7f457d3,
+        type: 3}
+      propertyPath: healthMax
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378888575533256573, guid: 2bc0d1a60641c5944becdeebf7f457d3,
+        type: 3}
+      propertyPath: health
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378888575533256573, guid: 2bc0d1a60641c5944becdeebf7f457d3,
+        type: 3}
+      propertyPath: physicalAttack
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378888575533256573, guid: 2bc0d1a60641c5944becdeebf7f457d3,
+        type: 3}
+      propertyPath: physicalDefence
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378888575533256573, guid: 2bc0d1a60641c5944becdeebf7f457d3,
+        type: 3}
+      propertyPath: magicDefence
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378888575533256573, guid: 2bc0d1a60641c5944becdeebf7f457d3,
+        type: 3}
+      propertyPath: attackSpeed
+      value: 0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bc0d1a60641c5944becdeebf7f457d3, type: 3}
 --- !u!4 &580442803 stripped
@@ -4537,6 +4567,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965645431392160973, guid: 4f83ae9d8b34dc042993744ea50ef3f5,
+        type: 3}
+      propertyPath: healthMax
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965645431392160973, guid: 4f83ae9d8b34dc042993744ea50ef3f5,
+        type: 3}
+      propertyPath: health
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965645431392160973, guid: 4f83ae9d8b34dc042993744ea50ef3f5,
+        type: 3}
+      propertyPath: magicMax
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965645431392160973, guid: 4f83ae9d8b34dc042993744ea50ef3f5,
+        type: 3}
+      propertyPath: physicalAttack
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965645431392160973, guid: 4f83ae9d8b34dc042993744ea50ef3f5,
+        type: 3}
+      propertyPath: physicalDefence
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965645431392160973, guid: 4f83ae9d8b34dc042993744ea50ef3f5,
+        type: 3}
+      propertyPath: magicDefence
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965645431392160973, guid: 4f83ae9d8b34dc042993744ea50ef3f5,
+        type: 3}
+      propertyPath: attackRange
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965645431392160973, guid: 4f83ae9d8b34dc042993744ea50ef3f5,
+        type: 3}
+      propertyPath: attackSpeed
+      value: 0.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f83ae9d8b34dc042993744ea50ef3f5, type: 3}
