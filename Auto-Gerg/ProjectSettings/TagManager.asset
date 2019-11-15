@@ -8,6 +8,7 @@ TagManager:
   - GroundTile
   - TestPiece1
   - TestPiece2
+  - RoundManager
   layers:
   - Default
   - TransparentFX

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CharacterAI : MonoBehaviour
 {
+    private RoundManager rm;
 
     public LayerMask layer;
 
@@ -20,11 +21,12 @@ public class CharacterAI : MonoBehaviour
     void Awake() {
         moveTurn = true;
         moveTime = moveTimeSet;
+        rm = GameObject.FindGameObjectWithTag("RoundManager").GetComponent<RoundManager>();
     }
 
     void Update()
     {
-        if (moveTurn ) {
+        if (moveTurn && rm.BattleCameraActive == true ) {
             Move();
 
         }
