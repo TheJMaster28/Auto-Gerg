@@ -5,9 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - GroundTile
-  - TestPiece1
-  - TestPiece2
   - Board
+  - Team1
+  - Team2
   layers:
   - Default
   - TransparentFX
