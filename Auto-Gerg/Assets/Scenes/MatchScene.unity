@@ -9516,7 +9516,7 @@ GameObject:
   - component: {fileID: 1900921751}
   - component: {fileID: 1900921750}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Character Selection Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10047,7 +10047,7 @@ GameObject:
   - component: {fileID: 2002952152}
   - component: {fileID: 2002952153}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UI Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
