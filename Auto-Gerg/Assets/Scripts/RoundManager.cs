@@ -11,17 +11,15 @@ public class RoundManager : MonoBehaviour
     public GameObject P2;
     public GameObject BattleCamera;
 
-    public bool BattleCameraActive = false;
-
     private int roundCount = 0;
 
-    public static float startBattleTimer = 15.0f;
+    public static float startBattleTimer = 5.0f;
     float currBattleTimer = startBattleTimer;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+   
     }
 
     // Update is called once per frame
@@ -57,7 +55,6 @@ public class RoundManager : MonoBehaviour
         P2.GetComponent<PlayerManager>().SetHasGone(false);
 
         currBattleTimer = startBattleTimer;
-        BattleCameraActive = false;
     }
 
     
@@ -115,7 +112,8 @@ public class RoundManager : MonoBehaviour
         P1Camera.SetActive(false);
         P2Camera.SetActive(false);
         BattleCamera.SetActive(true);
-        BattleCameraActive = true;
+
+        
         
     }
 }
