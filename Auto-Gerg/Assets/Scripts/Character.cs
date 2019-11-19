@@ -31,7 +31,7 @@ public class Character : MonoBehaviour
     private float magicDefence;
 
     [SerializeField]
-    private float attackRange;
+    private int attackRange;
 
     [SerializeField]
     private float attackSpeed;
@@ -54,6 +54,7 @@ public class Character : MonoBehaviour
 
 
     public GameObject Tile;
+    public bool isdead;
 
     // functions for awake and accessing stats
     private void Awake() {
@@ -68,7 +69,7 @@ public class Character : MonoBehaviour
         return physicalDefence;
     }
 
-    public float getRange() {
+    public int getRange() {
         return attackRange;
     }
 
@@ -81,6 +82,12 @@ public class Character : MonoBehaviour
     {
         position = this.transform.position;
         basePosition = position + baseSub;
+
+        if ( health < 0  && !isdead ) {
+            isdead = true;
+            print("DEAD!!!!!");
+            transform.position += new Vector3(0, -1f, 0);
+        }
     }
 
 }

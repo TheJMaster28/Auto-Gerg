@@ -2715,7 +2715,7 @@ PrefabInstance:
     - target: {fileID: 4378888575533256546, guid: 2bc0d1a60641c5944becdeebf7f457d3,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4378888575533256574, guid: 2bc0d1a60641c5944becdeebf7f457d3,
         type: 3}
@@ -2807,6 +2807,11 @@ PrefabInstance:
       propertyPath: Tile
       value: 
       objectReference: {fileID: 20971261}
+    - target: {fileID: 4378888575533256573, guid: 2bc0d1a60641c5944becdeebf7f457d3,
+        type: 3}
+      propertyPath: attackRange
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bc0d1a60641c5944becdeebf7f457d3, type: 3}
 --- !u!4 &580442803 stripped
@@ -3336,11 +3341,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678c6ec74202c2040b672853d92c630c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layer:
+  enemyLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 512
   radius: 10
   moveTimeSet: 1
+  attackTimeSet: 1
 --- !u!1 &695006807
 GameObject:
   m_ObjectHideFlags: 0
@@ -4348,11 +4354,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678c6ec74202c2040b672853d92c630c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layer:
+  enemyLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 256
   radius: 10
-  moveTimeSet: 1
+  moveTimeSet: 0.5
+  attackTimeSet: 1
 --- !u!4 &884151085 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8625236873656561067, guid: 9e1ec76b6f148a84b82a604a89cac983,
@@ -4851,7 +4858,7 @@ PrefabInstance:
     - target: {fileID: 8965645431392160960, guid: 4f83ae9d8b34dc042993744ea50ef3f5,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8965645431392160972, guid: 4f83ae9d8b34dc042993744ea50ef3f5,
         type: 3}
@@ -4941,7 +4948,7 @@ PrefabInstance:
     - target: {fileID: 8965645431392160973, guid: 4f83ae9d8b34dc042993744ea50ef3f5,
         type: 3}
       propertyPath: attackRange
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8965645431392160973, guid: 4f83ae9d8b34dc042993744ea50ef3f5,
         type: 3}
