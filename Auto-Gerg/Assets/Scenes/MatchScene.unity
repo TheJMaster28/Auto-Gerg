@@ -3345,6 +3345,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   radius: 10
+  moveTurn: 0
   moveTimeSet: 1
   attackTimeSet: 1
 --- !u!1 &695006807
@@ -4358,6 +4359,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   radius: 10
+  moveTurn: 0
   moveTimeSet: 0.5
   attackTimeSet: 1
 --- !u!4 &884151085 stripped

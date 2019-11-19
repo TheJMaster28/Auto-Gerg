@@ -15,32 +15,38 @@ public class CharacterAI : MonoBehaviour
 
     public float radius = 1f;
 
+    [SerializeField ]
     private bool moveTurn;
 
     public float moveTimeSet = 1f;
 
     private float moveTime;
 
-    public float attackTimeSet = 1f;
+    //public float attackTimeSet = 1f;
 
     private float attackTime;
 
     void Awake() {
+        characterScript = gameObject.GetComponent<Character>();
+        groundScript = characterScript.Tile.GetComponent<GroundTiles>();
         moveTurn = true;
         moveTime = moveTimeSet;
         rm = GameObject.FindGameObjectWithTag("RoundManager").GetComponent<RoundManager>();
-        attackTime = attackTimeSet;
-        characterScript = gameObject.GetComponent<Character>();
-        groundScript = characterScript.Tile.GetComponent<GroundTiles>();
+        attackTime = characterScript.getAttackSpeed();
+        
     }
 
     void Update()
     {
+
+
+        characterScript = gameObject.GetComponent<Character>();
+        groundScript = characterScript.Tile.GetComponent<GroundTiles>();
+
         if ( characterScript.isdead ) {
             return;
         }
-        characterScript = gameObject.GetComponent<Character>();
-        groundScript = characterScript.Tile.GetComponent<GroundTiles>();
+        
 
         if (moveTurn && rm.BattleCameraActive == true ) {
             Move();
@@ -67,7 +73,7 @@ public class CharacterAI : MonoBehaviour
             }
             
 
-            attackTime = attackTimeSet;
+            attackTime = characterScript.getAttackSpeed();
         }
         
     }
@@ -101,11 +107,7 @@ public class CharacterAI : MonoBehaviour
 
                 characterScript.Tile = moveTo;
 
-                
-
             }
-
-            
 
             moveTime = moveTimeSet;
         }
@@ -120,12 +122,17 @@ public class CharacterAI : MonoBehaviour
         float close = float.PositiveInfinity;
         GameObject closeV = adjcentTiles[0];
 
-
-
-
         foreach (GameObject aTile in adjcentTiles) {
+
             Vector3 tilepostion = aTile.transform.position;
+
             float dis = Vector3.Distance(closetEnemy, tilepostion);
+
+            if ( aTile.GetComponent<GroundTiles>().chessPiece != null ) {
+                closeV = characterScript.Tile;
+                break;
+            }
+
             if (close > dis) {
                 close = dis;
                 closeV = aTile;
@@ -138,8 +145,7 @@ public class CharacterAI : MonoBehaviour
 
             foreach (GameObject aTile in adjcentTiles) {
                 GameObject piece = aTile.GetComponent<GroundTiles>().chessPiece;
-                if (piece != null ) {
-
+                if ( piece != null ) {
 
                     if (((1 << piece.layer) & enemyLayer) != 0) {
                         moveTurn = false;
@@ -150,6 +156,7 @@ public class CharacterAI : MonoBehaviour
                 }
 
             }
+
             adjcentTiles = getOuterRingOfAdjTiles(adjcentTiles);
 
         }
@@ -205,8 +212,8 @@ public class CharacterAI : MonoBehaviour
             foreach (GameObject aTile in adjcentTiles) {
                 GameObject piece = aTile.GetComponent<GroundTiles>().chessPiece;
                 if (piece != null) {
-
-                    if (((1 << piece.layer) & enemyLayer) != 0) {
+                    if ( !piece.layer.Equals(enemyLayer.value) ) {
+                        moveTurn = false;
                         return piece;
                     }
                 }
