@@ -2810,7 +2810,7 @@ PrefabInstance:
     - target: {fileID: 4378888575533256573, guid: 2bc0d1a60641c5944becdeebf7f457d3,
         type: 3}
       propertyPath: attackRange
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bc0d1a60641c5944becdeebf7f457d3, type: 3}
@@ -4948,7 +4948,7 @@ PrefabInstance:
     - target: {fileID: 8965645431392160973, guid: 4f83ae9d8b34dc042993744ea50ef3f5,
         type: 3}
       propertyPath: attackRange
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8965645431392160973, guid: 4f83ae9d8b34dc042993744ea50ef3f5,
         type: 3}
@@ -10788,6 +10788,7 @@ MonoBehaviour:
   evasionPercentage: 0
   healthRegenPercentage: 0
   Tile: {fileID: 0}
+  isdead: 0
 --- !u!65 &2137448613
 BoxCollider:
   m_ObjectHideFlags: 0
