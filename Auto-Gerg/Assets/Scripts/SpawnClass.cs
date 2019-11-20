@@ -9,6 +9,8 @@ public class SpawnClass : MonoBehaviour
     public GameObject Ranger;
     public GameObject Gunslinger;
     public Transform objectToMove;
+   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +19,7 @@ public class SpawnClass : MonoBehaviour
 
     void Update()
     {
-
+        
     }
 
     public void spawnBlademaster()
@@ -25,6 +27,7 @@ public class SpawnClass : MonoBehaviour
         Debug.Log("Spawning bladeMaster");
         Instantiate(bladeMaster, new Vector3(0, 1, 0), Quaternion.identity);
 
+   
     }
 
     public void spawnGunslinger()

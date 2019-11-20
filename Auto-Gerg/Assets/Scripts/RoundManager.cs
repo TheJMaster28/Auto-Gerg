@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RoundManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class RoundManager : MonoBehaviour
     public GameObject P1;
     public GameObject P2;
     public GameObject BattleCamera;
+
+    private int bladeMasterSynCount;
 
     public bool BattleCameraActive = false;
 
@@ -40,6 +43,16 @@ public class RoundManager : MonoBehaviour
                 CameraTurnManager();
             }
         }
+
+
+        //blademasterSynergy count
+        bladeMasterSynCount = P1.GetComponent<PlayerManager>().getbladeMasterSynergy();
+   
+        if (bladeMasterSynCount > 1)
+        {
+            GameObject.FindGameObjectWithTag("Blademaster_Synergy").GetComponent<Image>().color = new Color32(233, 36, 21, 100);
+         
+        }
     }
 
     private void LateUpdate()
@@ -47,7 +60,7 @@ public class RoundManager : MonoBehaviour
         CameraTurnManager();
     }
 
-
+    
     //resets bool values for pre-round
     private void RoundReset()
     {
@@ -59,6 +72,8 @@ public class RoundManager : MonoBehaviour
         currBattleTimer = startBattleTimer;
         BattleCameraActive = false;
     }
+
+ 
 
     
 

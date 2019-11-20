@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour
     
     private bool hasWonRound = false;
     public bool hasEnded = false;
+    private int bladeMasterSynergyCount = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,11 @@ public class PlayerManager : MonoBehaviour
         
     }
 
-
+    public int getbladeMasterSynergy()
+    {
+        
+        return bladeMasterSynergyCount;
+    }
     public void SetWonRound(bool wr)
     {
         hasWonRound = wr;
