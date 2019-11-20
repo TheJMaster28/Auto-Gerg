@@ -23,7 +23,7 @@ public class ButtonActions : MonoBehaviour
     public void EndTurn()
     {
         //set player's isTurn to false when they click on the end turn button
-        player.GetComponent<PlayerManager>().SetHasGone(true);
+        player.GetComponent<PlayerManager>().SetHasEnded(true);
         
     }
     

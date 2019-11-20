@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+
+
 public class RoundManager : MonoBehaviour
 {
 
@@ -11,18 +14,21 @@ public class RoundManager : MonoBehaviour
     public GameObject P1;
     public GameObject P2;
     public GameObject BattleCamera;
+    
+
 
     private int bladeMasterSynCount;
 
+
     public bool BattleCameraActive = false;
 
-    private int roundCount = 0;
+    public int roundCount = 0;
 
     public static float startBattleTimer = 15.0f;
     float currBattleTimer = startBattleTimer;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         
     }
@@ -31,6 +37,7 @@ public class RoundManager : MonoBehaviour
     void Update()
     {
         
+
 
         //Timer to end battle for now
         if (BattleCamera.active == true)
@@ -65,9 +72,9 @@ public class RoundManager : MonoBehaviour
     private void RoundReset()
     {
         P1.GetComponent<PlayerManager>().SetWonRound(false);
-        P1.GetComponent<PlayerManager>().SetHasGone(false);
+        P1.GetComponent<PlayerManager>().SetHasEnded(false);
         P2.GetComponent<PlayerManager>().SetWonRound(false);
-        P2.GetComponent<PlayerManager>().SetHasGone(false);
+        P2.GetComponent<PlayerManager>().SetHasEnded(false);
 
         currBattleTimer = startBattleTimer;
         BattleCameraActive = false;
@@ -80,8 +87,8 @@ public class RoundManager : MonoBehaviour
     public void CameraTurnManager()
     {
 
-        bool p1HasEnded = P1.GetComponent<PlayerManager>().GetHasGone();
-        bool p2HasEnded = P2.GetComponent<PlayerManager>().GetHasGone();
+        bool p1HasEnded = P1.GetComponent<PlayerManager>().GetHasEnded();
+        bool p2HasEnded = P2.GetComponent<PlayerManager>().GetHasEnded();
 
         //Player 1 hasGone Player 2 has not, switch to Player 2 Cam
         if (p1HasEnded == true && p2HasEnded == false)

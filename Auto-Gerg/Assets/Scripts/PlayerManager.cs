@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,16 +7,21 @@ public class PlayerManager : MonoBehaviour
 {
 
     public GameObject Player;
+    public LinkedList<GameObject> activeField = new LinkedList<GameObject>();
+    public LinkedList<GameObject> benched = new LinkedList<GameObject>();
+
+    
 
     //defaults
     private float Health = 100.0f;
-    
     private bool hasWonRound = false;
+    private bool canSpawn = true;
     public bool hasEnded = false;
-    private int bladeMasterSynergyCount = 5;
+    
+
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         
     }
@@ -26,11 +32,7 @@ public class PlayerManager : MonoBehaviour
         
     }
 
-    public int getbladeMasterSynergy()
-    {
-        
-        return bladeMasterSynergyCount;
-    }
+
     public void SetWonRound(bool wr)
     {
         hasWonRound = wr;
@@ -41,12 +43,12 @@ public class PlayerManager : MonoBehaviour
         return hasWonRound;
     }
 
-    public void SetHasGone(bool hg)
+    public void SetHasEnded(bool hg)
     {
         hasEnded = hg;
     }
 
-    public bool GetHasGone()
+    public bool GetHasEnded()
     {
         return hasEnded;
     }
@@ -55,4 +57,15 @@ public class PlayerManager : MonoBehaviour
     {
         Health = Health - takeDmg;
     }
+
+    public void setCanSpawn(bool s)
+    {
+        canSpawn = s;
+    }
+
+    public bool getCanSpawn()
+    {
+        return canSpawn;
+    }
+
 }
