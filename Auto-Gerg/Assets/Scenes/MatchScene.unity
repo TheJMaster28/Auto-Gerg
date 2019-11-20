@@ -2785,7 +2785,7 @@ PrefabInstance:
     - target: {fileID: 4378888575533256573, guid: 2bc0d1a60641c5944becdeebf7f457d3,
         type: 3}
       propertyPath: physicalAttack
-      value: 55
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 4378888575533256573, guid: 2bc0d1a60641c5944becdeebf7f457d3,
         type: 3}
@@ -3347,7 +3347,6 @@ MonoBehaviour:
   radius: 10
   moveTurn: 0
   moveTimeSet: 1
-  attackTimeSet: 1
 --- !u!1 &695006807
 GameObject:
   m_ObjectHideFlags: 0
@@ -4361,7 +4360,6 @@ MonoBehaviour:
   radius: 10
   moveTurn: 0
   moveTimeSet: 0.5
-  attackTimeSet: 1
 --- !u!4 &884151085 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8625236873656561067, guid: 9e1ec76b6f148a84b82a604a89cac983,
