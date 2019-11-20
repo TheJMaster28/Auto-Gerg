@@ -17,7 +17,7 @@ public class PlayerManager : MonoBehaviour
     private bool hasWonRound = false;
     private bool canSpawn = true;
     public bool hasEnded = false;
-    
+    private int bladeMasterSynergyCount = 5;
 
 
     // Start is called before the first frame update
@@ -56,6 +56,11 @@ public class PlayerManager : MonoBehaviour
     public void TakeDamage(int takeDmg)
     {
         Health = Health - takeDmg;
+    }
+
+    public int getBladeMasterSynergyCount()
+    {
+        return bladeMasterSynergyCount;
     }
 
     public void setCanSpawn(bool s)

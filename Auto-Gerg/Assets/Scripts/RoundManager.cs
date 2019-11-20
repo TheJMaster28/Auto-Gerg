@@ -53,7 +53,7 @@ public class RoundManager : MonoBehaviour
 
 
         //blademasterSynergy count
-        bladeMasterSynCount = P1.GetComponent<PlayerManager>().getbladeMasterSynergy();
+        bladeMasterSynCount = P1.GetComponent<PlayerManager>().getBladeMasterSynergyCount();
    
         if (bladeMasterSynCount > 1)
         {
