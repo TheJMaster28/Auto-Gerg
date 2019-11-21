@@ -17,12 +17,12 @@ public class Character : MonoBehaviour
 
     [SerializeField]
     private float magic;
-
-    [SerializeField]
-    private float physicalAttack;
-
-    [SerializeField]
-    private float magicaAttack;
+ 
+	[SerializeField]
+	private float attackDamage;
+	
+	[SerializeField]
+	private string attackType;
 
     [SerializeField]
     private float physicalDefence;
@@ -35,12 +35,6 @@ public class Character : MonoBehaviour
 
     [SerializeField]
     private float attackSpeed;
-
-    [SerializeField]
-    private float critAttPercentage;
-
-    [SerializeField]
-    private float evasionPercentage;
 
     [SerializeField]
     private float healthRegenPercentage;
@@ -62,8 +56,11 @@ public class Character : MonoBehaviour
     }
 
     public float getAttackDamage() {
-        return physicalAttack;
+        return attackDamage;
     }
+	public string getAttackType(){
+		return attackType;
+	}
 
     public float getDefence() {
         return physicalDefence;

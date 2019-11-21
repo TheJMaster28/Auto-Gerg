@@ -3,8 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterAI : MonoBehaviour
-{
+public class CharacterAI : MonoBehaviour {
     // get round manger for accessing round manager to see if it is in battle phase
     private RoundManager rm;
 
@@ -17,9 +16,10 @@ public class CharacterAI : MonoBehaviour
     // other player's pieces layer 
     public LayerMask enemyLayer;
 
-    // used in Overlap share function
-    public float radius = 1f;
+    public string enemyTag;
 
+    // used in Overlap share function
+    public float radius = 10f;
 
     // can move bool switch
     private bool moveTurn;
@@ -33,85 +33,83 @@ public class CharacterAI : MonoBehaviour
     // time between attacks
     private float attackTime;
 
-    void Awake() {
+    void Awake () {
 
         // grab scripts from gameObject
-        characterScript = gameObject.GetComponent<Character>();
-        groundScript = characterScript.Tile.GetComponent<GroundTiles>();
-        
+        characterScript = gameObject.GetComponent<Character> ();
+        groundScript = characterScript.Tile.GetComponent<GroundTiles> ();
+
         // defualt to moving 
         moveTurn = true;
         moveTime = moveTimeSet;
 
         // grab RoundManager gameObject
-        rm = GameObject.FindGameObjectWithTag("RoundManager").GetComponent<RoundManager>();
-        
+        rm = GameObject.FindGameObjectWithTag ("RoundManager").GetComponent<RoundManager> ();
+
         // get attack speed from character Script
-        attackTime = characterScript.getAttackSpeed();
-        
+        attackTime = characterScript.getAttackSpeed ();
+
     }
 
-    void Update()
-    {
+    void Update () {
 
         // get new calls since scripts values change
-        characterScript = gameObject.GetComponent<Character>();
-        groundScript = characterScript.Tile.GetComponent<GroundTiles>();
+        characterScript = gameObject.GetComponent<Character> ();
+        groundScript = characterScript.Tile.GetComponent<GroundTiles> ();
 
         // if character is dead, no AI
-        if ( characterScript.isdead ) {
+        if (characterScript.isdead) {
             return;
         }
-        
+
         // if you can move and we are in battle mode, move
-        if (moveTurn && rm.BattleCameraActive == true ) {
-            Move();
+        if (moveTurn && rm.BattleCameraActive == true) {
+            Move ();
 
         }
         // otherwise we attack
-        else if (rm.BattleCameraActive == true ) {
-            Attack();
+        else if (rm.BattleCameraActive == true) {
+            Attack ();
         }
-        
+
     }
 
     // Attack Steps
-    private void Attack() {
+    private void Attack () {
 
         // reduce time
         attackTime -= Time.deltaTime;
 
         // timer ran out, attack
-        if ( attackTime < 0 ) {
-            
-            print("ATTACK!");
+        if (attackTime < 0) {
+
+            print ("ATTACK!");
 
             // find enemy within range
-            GameObject enemy = EnemyWithinRange();
-            
+            GameObject enemy = EnemyWithinRange ();
+
             // attack enemy that is within range
-            if (enemy != null ) {
-                enemy.GetComponent<Character>().health -= characterScript.getAttackDamage();
+            if (enemy != null) {
+                enemy.GetComponent<Character> ().health -= characterScript.getAttackDamage ();
             }
-            
+
             // reset timer
-            attackTime = characterScript.getAttackSpeed();
+            attackTime = characterScript.getAttackSpeed ();
         }
-        
+
     }
 
-   
     // Move Steps
-    private void Move() {
-        
+    private void Move () {
+
         // reduce time
         moveTime -= Time.deltaTime;
 
         // timer ran out, move
-        if (moveTime < 0 ) {
-            
+        if (moveTime < 0) {
+
             // get all eneimes in enemylayer
-            Collider[] hits = Physics.OverlapSphere(transform.position, radius, enemyLayer);
+            Collider[] hits = Physics.OverlapSphere (transform.position, radius, enemyLayer);
 
             // postion of the cloest enemy
             Vector3 closetEnemy;
@@ -120,40 +118,46 @@ public class CharacterAI : MonoBehaviour
             if (hits.Length != 0) {
 
                 // find cloest enemy
-                closetEnemy = ClosestEnemy(hits);
+                closetEnemy = ClosestEnemy (hits);
 
                 // then find cloest tile within its adject list
-                GameObject moveTo = FindClosestTile(closetEnemy);
+                GameObject moveTo = FindClosestTile (closetEnemy);
 
                 // if we are no longer moving, stop
                 if (!moveTurn) {
+                    moveTime = moveTimeSet;
+                    return;
+                }
+
+                if (moveTo == null) {
+                    moveTime = moveTimeSet;
                     return;
                 }
 
                 // set refernece of the new tile to move to, to the gameObect
-                moveTo.GetComponent<GroundTiles>().chessPiece = gameObject;
+                moveTo.GetComponent<GroundTiles> ().chessPiece = gameObject;
 
                 // remove refernce from old tile
                 groundScript.chessPiece = null;
 
                 // move gameobject to the new tile
-                transform.position = moveTo.GetComponent<GroundTiles>().topPosition + new Vector3(0f,.5f,0f );
+                transform.position = moveTo.GetComponent<GroundTiles> ().topPosition + new Vector3 (0f, .5f, 0f);
 
                 // set tile refernce to new tile
                 characterScript.Tile = moveTo;
 
             }
-            
+
             // reset tile
             moveTime = moveTimeSet;
         }
 
     }
 
-    private GameObject FindClosestTile(Vector3 closetEnemy) {
+    private GameObject FindClosestTile (Vector3 closetEnemy) {
 
         // grab list
-        List<GameObject> adjcentTiles = groundScript.getAdjcentTiles();
+        List<GameObject> adjcentTiles = groundScript.getAdjcentTiles ();
 
         float close = float.PositiveInfinity;
         GameObject closeV = adjcentTiles[0];
@@ -163,12 +167,11 @@ public class CharacterAI : MonoBehaviour
 
             Vector3 tilepostion = aTile.transform.position;
 
-            float dis = Vector3.Distance(closetEnemy, tilepostion);
+            float dis = Vector3.Distance (closetEnemy, tilepostion);
 
             // if there is a chess piece near me, then quit
-            if ( aTile.GetComponent<GroundTiles>().chessPiece != null ) {
-                closeV = characterScript.Tile;
-                break;
+            if (aTile.GetComponent<GroundTiles> ().chessPiece != null) {
+                continue;
             }
 
             if (close > dis) {
@@ -178,28 +181,29 @@ public class CharacterAI : MonoBehaviour
 
         }
 
-
-
         // go through tiles within range to see if there are eneimes
-        for (int i = 0; i < characterScript.getRange(); i++) {
+        for (int i = 0; i < characterScript.getRange (); i++) {
 
             foreach (GameObject aTile in adjcentTiles) {
-                GameObject piece = aTile.GetComponent<GroundTiles>().chessPiece;
-                if ( piece != null ) {
+                GameObject piece = aTile.GetComponent<GroundTiles> ().chessPiece;
+                if (piece != null) {
 
                     // suppose to stop moving when a enemy piece around
-                    if ( ((1 << piece.layer) & enemyLayer) != 0 ) {
+                    // if ( ((1 << piece.layer) & enemyLayer) != 0 ) {
+                    //     moveTurn = false;
+                    //     return null;
+                    // }
+                    if (piece.tag == enemyTag) {
                         moveTurn = false;
                         return null;
                     }
 
-                    
                 }
 
             }
 
             // get outer "ring" of tiles' adject list to get next tile rnage up
-            adjcentTiles = getOuterRingOfAdjTiles(adjcentTiles);
+            adjcentTiles = getOuterRingOfAdjTiles (adjcentTiles);
 
         }
 
@@ -208,20 +212,20 @@ public class CharacterAI : MonoBehaviour
     }
 
     // create new list of outer tiles
-    List<GameObject> getOuterRingOfAdjTiles(List<GameObject> adjcentTiles) {
+    List<GameObject> getOuterRingOfAdjTiles (List<GameObject> adjcentTiles) {
 
-        List<GameObject> outerRing = new List<GameObject>();
+        List<GameObject> outerRing = new List<GameObject> ();
 
         // for each tile in current tile's adject list
         foreach (GameObject aTile in adjcentTiles) {
-            List<GameObject> aTileAdj = aTile.GetComponent<GroundTiles>().getAdjcentTiles();
+            List<GameObject> aTileAdj = aTile.GetComponent<GroundTiles> ().getAdjcentTiles ();
 
             // each adject tile adject list
             foreach (GameObject AdjTile in aTileAdj) {
 
                 // add only if it is not in list
-                if (!adjcentTiles.Contains(AdjTile)) {
-                    outerRing.Add(AdjTile);
+                if (!adjcentTiles.Contains (AdjTile)) {
+                    outerRing.Add (AdjTile);
                 }
             }
 
@@ -231,16 +235,16 @@ public class CharacterAI : MonoBehaviour
     }
 
     // find closet enemy
-    private Vector3 ClosestEnemy(Collider[] hits) {
+    private Vector3 ClosestEnemy (Collider[] hits) {
 
         float close = float.PositiveInfinity;
         Vector3 closeV = Vector3.zero;
-        
+
         // go through array and calcuate distance between gameObject postion and other players pieces
-        for ( int i = 0; i < hits.Length; i++) {
+        for (int i = 0; i < hits.Length; i++) {
             Vector3 enemyPostion = hits[i].transform.position;
-            float dis = Vector3.Distance(transform.position, enemyPostion);
-            if ( close >  dis ) {
+            float dis = Vector3.Distance (transform.position, enemyPostion);
+            if (close > dis) {
                 close = dis;
                 closeV = enemyPostion;
             }
@@ -250,33 +254,37 @@ public class CharacterAI : MonoBehaviour
     }
 
     // check if eneiems are within range
-    private GameObject EnemyWithinRange() {
+    private GameObject EnemyWithinRange () {
 
-        List<GameObject> adjcentTiles = groundScript.getAdjcentTiles();
+        List<GameObject> adjcentTiles = groundScript.getAdjcentTiles ();
 
-        for (int i = 0; i < characterScript.getRange(); i++) {
+        for (int i = 0; i < characterScript.getRange (); i++) {
 
             foreach (GameObject aTile in adjcentTiles) {
 
-                GameObject piece = aTile.GetComponent<GroundTiles>().chessPiece;
+                GameObject piece = aTile.GetComponent<GroundTiles> ().chessPiece;
 
                 if (piece != null) {
 
-                    //layerNumber = Mathf.Log(myLayer.value, 2)
+                    // float layerNumber = Mathf.Log(enemyLayer.value, 2);
                     // if piece is on a the eneimes layer, return piece
-                    if ( ((1 << piece.layer) & enemyLayer) != 0 ) {
-                        //moveTurn = false;
+                    // if ( ((1 << piece.layer) & enemyLayer) != 0 ) {
+                    //     //moveTurn = false;
+                    //     return piece;
+                    // }
+                    if (piece.tag == enemyTag) {
                         return piece;
                     }
+
                 }
             }
-            adjcentTiles = getOuterRingOfAdjTiles(adjcentTiles);
+            adjcentTiles = getOuterRingOfAdjTiles (adjcentTiles);
 
         }
 
         moveTurn = true;
         return null;
-        
+
     }
 
 }
