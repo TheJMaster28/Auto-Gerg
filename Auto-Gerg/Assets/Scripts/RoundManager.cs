@@ -14,7 +14,7 @@ public class RoundManager : MonoBehaviour
     public GameObject P1;
     public GameObject P2;
     public GameObject BattleCamera;
-    
+
 
 
     private int bladeMasterSynCount;
@@ -31,7 +31,7 @@ public class RoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-          
+
     }
 
     // Update is called once per frame
@@ -68,7 +68,8 @@ public class RoundManager : MonoBehaviour
         CameraTurnManager();
     }
 
-    
+
+
     //resets bool values for pre-round
     private void RoundReset()
     {
@@ -109,6 +110,8 @@ public class RoundManager : MonoBehaviour
         {
             SwitchToP1();
         }
+
+
 
         
     }
