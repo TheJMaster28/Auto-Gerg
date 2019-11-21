@@ -91,7 +91,7 @@ public class CharacterAI : MonoBehaviour {
             // attack enemy that is within range
             if (enemy != null) {
 				
-				float modifiedDamage;
+				float modifiedDamage = 0;
 				
 				//set modifiedDamage to damage - enemy defense or resistance//
 				if(characterScript.getAttackType() == "Physical")

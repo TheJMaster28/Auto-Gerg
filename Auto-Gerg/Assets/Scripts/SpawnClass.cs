@@ -8,8 +8,10 @@ public class SpawnClass : MonoBehaviour
     public GameObject bladeMaster;
     public GameObject Ranger;
     public GameObject Gunslinger;
-    public Transform objectToMove;
- 
+  
+    private GameObject linehandler;
+    private Vector3 mousepos;
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,9 +20,19 @@ public class SpawnClass : MonoBehaviour
 
     }
 
+  
+
     void Update()
     {
-        
+
+        /*USED FOR MOUSE POSTITION NOT IN USE NOW*/
+      /*  mousepos = Input.mousePosition;
+        mousepos.z = 10;
+  
+
+        mousepos = Camera.main.ScreenToWorldPoint(mousepos);
+        */
+
     }
 
     public void spawnBlademaster()
@@ -43,7 +55,13 @@ public class SpawnClass : MonoBehaviour
         
         
 
-   
+
+     //USED FOR MOUSE POSITION NOT IN USE NOW
+            //linehandler = Instantiate(bladeMaster, mousepos, Quaternion.identity) as GameObject;
+
+
+
+
     }
 
     public void spawnGunslinger()
