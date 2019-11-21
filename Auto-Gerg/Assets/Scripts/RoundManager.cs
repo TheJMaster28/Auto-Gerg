@@ -18,19 +18,20 @@ public class RoundManager : MonoBehaviour
 
 
     private int bladeMasterSynCount;
+    public int roundCount = 0;
 
 
     public bool BattleCameraActive = false;
 
-    public int roundCount = 0;
-
     public static float startBattleTimer = 15.0f;
     float currBattleTimer = startBattleTimer;
+
+    
 
     // Start is called before the first frame update
     void Awake()
     {
-        
+          
     }
 
     // Update is called once per frame

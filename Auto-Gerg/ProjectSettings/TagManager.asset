@@ -9,6 +9,8 @@ TagManager:
   - TestPiece1
   - TestPiece2
   - RoundManager
+  - Player1
+  - Player2
   layers:
   - Default
   - TransparentFX
