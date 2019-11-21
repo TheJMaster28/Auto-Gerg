@@ -93,9 +93,9 @@ public class CharacterAI : MonoBehaviour {
 				
 				float modifiedDamage = 0;
 				
-				//set modifiedDamage to damage - enemy defense or resistance//
+				//set modifiedDamage to damage - enemy armor or resistance//
 				if(characterScript.getAttackType() == "Physical")
-					modifiedDamage = characterScript.getAttackDamage () - enemy.GetComponent<Character>().getDefense();
+					modifiedDamage = characterScript.getAttackDamage () - enemy.GetComponent<Character>().getArmor();
 				else if(characterScript.getAttackType() == "Magical")
 					modifiedDamage = characterScript.getAttackDamage () - enemy.GetComponent<Character>().getResistance();
 				else
