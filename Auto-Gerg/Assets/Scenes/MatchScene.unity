@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 52d44e5692d0c134f9b2ed3abd21fb73, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.6337127, g: 0.6605773, b: 0.70117444, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1844,6 +1844,7 @@ MonoBehaviour:
   P2: {fileID: 40156382}
   BattleCamera: {fileID: 97484747}
   BattleCameraActive: 0
+  roundCount: 0
 --- !u!4 &416256439
 Transform:
   m_ObjectHideFlags: 0
@@ -8310,7 +8311,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 12.8, y: 47.6}
+  m_AnchoredPosition: {x: 12.799988, y: 47.59999}
   m_SizeDelta: {x: -227.2, y: 95.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1900921750
