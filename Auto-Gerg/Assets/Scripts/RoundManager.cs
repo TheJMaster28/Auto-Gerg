@@ -77,13 +77,11 @@ public class RoundManager : MonoBehaviour
         P2.GetComponent<PlayerManager>().SetWonRound(false);
         P2.GetComponent<PlayerManager>().SetHasEnded(false);
 
+        roundCount++;
         currBattleTimer = startBattleTimer;
         BattleCameraActive = false;
     }
 
- 
-
-    
 
     public void CameraTurnManager()
     {

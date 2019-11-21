@@ -7,8 +7,7 @@ public class PlayerManager : MonoBehaviour
 {
 
     public GameObject Player;
-    public LinkedList<GameObject> activeField = new LinkedList<GameObject>();
-    public LinkedList<GameObject> benched = new LinkedList<GameObject>();
+    public List<GameObject> activeField = new List<GameObject>();
 
     
 
