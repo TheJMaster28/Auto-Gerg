@@ -22,6 +22,7 @@ public class CharacterChanger : MonoBehaviour
         images[1] = s1;
         images[2] = s2;
         images[3] = s3;
+        changeImage();
     }
 
     public void changeImage()
@@ -44,11 +45,16 @@ public class CharacterChanger : MonoBehaviour
         bool p1HasEnded = P1.GetComponent<PlayerManager>().GetHasEnded();
         bool p2HasEnded = P2.GetComponent<PlayerManager>().GetHasEnded();
 
-   /*     //Player 1 hasGone Player 2 has not, switch to Player 2 Cam
+        /*
+         *NOT USING ATM
+        //Player 1 hasGone Player 2 has not, switch to Player 2 Cam
         if (p1HasEnded == true && p2HasEnded == false)
         {
             changeImage();
-        }*/
+        }
+        
+         */
+
         //Player 2 hasGone Player 1 has not, switch to Player 1 Cam
         if (p1HasEnded == false && p2HasEnded == true)
         {
