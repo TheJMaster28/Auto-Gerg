@@ -22,13 +22,13 @@ public class Character : MonoBehaviour
 	private float attackDamage;
 	
 	[SerializeField]
-	private string attackType;
+	private string attackType = "Physical";
 
     [SerializeField]
-    private float physicalDefence;
+    private float physicalDefense;
 
     [SerializeField]
-    private float magicDefence;
+    private float magicDefense;
 
     [SerializeField]
     private int attackRange;
@@ -62,9 +62,13 @@ public class Character : MonoBehaviour
 		return attackType;
 	}
 
-    public float getDefence() {
-        return physicalDefence;
+    public float getDefense() {
+        return physicalDefense;
     }
+	
+	public float getResistance(){
+		return magicDefense;
+	}
 
     public int getRange() {
         return attackRange;

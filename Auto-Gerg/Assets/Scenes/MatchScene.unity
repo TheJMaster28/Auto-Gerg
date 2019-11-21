@@ -3036,6 +3036,26 @@ PrefabInstance:
       propertyPath: attackRange
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4378888575533256573, guid: 2bc0d1a60641c5944becdeebf7f457d3,
+        type: 3}
+      propertyPath: attackDamage
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378888575533256573, guid: 2bc0d1a60641c5944becdeebf7f457d3,
+        type: 3}
+      propertyPath: attackType
+      value: Physical
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378888575533256573, guid: 2bc0d1a60641c5944becdeebf7f457d3,
+        type: 3}
+      propertyPath: physicalDefense
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378888575533256573, guid: 2bc0d1a60641c5944becdeebf7f457d3,
+        type: 3}
+      propertyPath: magicDefense
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bc0d1a60641c5944becdeebf7f457d3, type: 3}
 --- !u!4 &580442803 stripped
@@ -5370,7 +5390,7 @@ PrefabInstance:
     - target: {fileID: 8965645431392160973, guid: 4f83ae9d8b34dc042993744ea50ef3f5,
         type: 3}
       propertyPath: attackRange
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8965645431392160973, guid: 4f83ae9d8b34dc042993744ea50ef3f5,
         type: 3}
@@ -5382,6 +5402,26 @@ PrefabInstance:
       propertyPath: Tile
       value: 
       objectReference: {fileID: 4135637}
+    - target: {fileID: 8965645431392160973, guid: 4f83ae9d8b34dc042993744ea50ef3f5,
+        type: 3}
+      propertyPath: attackDamage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965645431392160973, guid: 4f83ae9d8b34dc042993744ea50ef3f5,
+        type: 3}
+      propertyPath: attackType
+      value: Magical
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965645431392160973, guid: 4f83ae9d8b34dc042993744ea50ef3f5,
+        type: 3}
+      propertyPath: physicalDefense
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965645431392160973, guid: 4f83ae9d8b34dc042993744ea50ef3f5,
+        type: 3}
+      propertyPath: magicDefense
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f83ae9d8b34dc042993744ea50ef3f5, type: 3}
 --- !u!4 &996530563 stripped
@@ -11238,14 +11278,12 @@ MonoBehaviour:
   health: 0
   magicMax: 0
   magic: 0
-  physicalAttack: 0
-  magicaAttack: 0
-  physicalDefence: 0
-  magicDefence: 0
+  attackDamage: 0
+  attackType: 
+  physicalDefense: 0
+  magicDefense: 0
   attackRange: 0
   attackSpeed: 0
-  critAttPercentage: 0
-  evasionPercentage: 0
   healthRegenPercentage: 0
   Tile: {fileID: 0}
   isdead: 0

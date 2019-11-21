@@ -90,7 +90,25 @@ public class CharacterAI : MonoBehaviour {
 
             // attack enemy that is within range
             if (enemy != null) {
-                enemy.GetComponent<Character> ().health -= characterScript.getAttackDamage ();
+				
+				float modifiedDamage;
+				
+				//set modifiedDamage to damage - enemy defense or resistance//
+				if(characterScript.getAttackType() == "Physical")
+					modifiedDamage = characterScript.getAttackDamage () - enemy.GetComponent<Character>().getDefense();
+				else if(characterScript.getAttackType() == "Magical")
+					modifiedDamage = characterScript.getAttackDamage () - enemy.GetComponent<Character>().getResistance();
+				else
+					print("Set a proper Character Attack Type");
+				
+				//deal modifiedDamage to enemy
+				if(modifiedDamage > 0)
+					enemy.GetComponent<Character> ().health -= modifiedDamage;
+				else 
+					enemy.GetComponent<Character> ().health -= 1;
+				
+				
+				
             }
 
             // reset timer
