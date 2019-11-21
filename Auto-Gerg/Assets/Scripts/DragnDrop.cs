@@ -4,9 +4,21 @@ using UnityEngine;
 
 public class DragnDrop : MonoBehaviour
 {
-    private GameObject _drag;
+    private Character characterScript;
+    private GroundTiles groundScript;
+    private BoundsCheck boundsCheck;
+
+    GameObject _drag;
     private Vector3 screenPosition;
     private Vector3 offset;
+
+
+    private Vector3 extra = new Vector3(0f, 0.5f, 0f);
+    private void Awake()
+    {
+        characterScript = gameObject.GetComponent<Character>();
+        groundScript = characterScript.Tile.GetComponent<GroundTiles>();
+    }
 
     private void Update()
     {
@@ -20,7 +32,7 @@ public class DragnDrop : MonoBehaviour
                 {
                     _drag = hit.transform.gameObject;
                     screenPosition = Camera.main.WorldToScreenPoint(_drag.transform.position);
-                    offset = _drag.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPosition.z));
+                    offset = _drag.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPosition.z));       // may need to change the screenPosition to the mousePosition
                 }
             }
         }

@@ -9,7 +9,7 @@ public class GroundTiles : MonoBehaviour
     private bool tileOccupied = false;
 
     public Vector3 topPosition;
-    Vector3 position;
+    public static Vector3 position;
     Vector3 extra = new Vector3(0f, 0.2f, 0f);
 
     public GameObject chessPiece;
