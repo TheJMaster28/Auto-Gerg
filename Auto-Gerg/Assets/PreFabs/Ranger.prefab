@@ -112,16 +112,15 @@ MonoBehaviour:
   health: 0
   magicMax: 100
   magic: 0
-  physicalAttack: 1
-  magicaAttack: 1
-  physicalDefence: 5
-  magicDefence: 5
+  attackDamage: 10
+  attackType: Physical
+  armor: 0
+  resistance: 0
   attackRange: 1
   attackSpeed: 1.5
-  critAttPercentage: 0
-  evasionPercentage: 0
   healthRegenPercentage: 0
   Tile: {fileID: 0}
+  isdead: 0
 --- !u!114 &-6577528551860778706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,8 +145,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678c6ec74202c2040b672853d92c630c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layer:
+  enemyLayer:
     serializedVersion: 2
     m_Bits: 0
-  radius: 1
+  enemyTag: 
+  radius: 10
   moveTimeSet: 1

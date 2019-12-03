@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CharacterAI : MonoBehaviour {
     // get round manger for accessing round manager to see if it is in battle phase
-    private RoundManager rm;
+    public RoundManager rm;
 
     // quicker way of writing GetComponent<Character>
     private Character characterScript;
@@ -32,8 +32,13 @@ public class CharacterAI : MonoBehaviour {
 
     // time between attacks
     private float attackTime;
+    private void Awake() {
 
-    void Awake () {
+        // grab RoundManager gameObject
+        rm = GameObject.FindGameObjectWithTag("RoundManager").GetComponent<RoundManager>();
+
+    }
+    void Start () {
 
         // grab scripts from gameObject
         characterScript = gameObject.GetComponent<Character> ();
@@ -43,8 +48,7 @@ public class CharacterAI : MonoBehaviour {
         moveTurn = true;
         moveTime = moveTimeSet;
 
-        // grab RoundManager gameObject
-        rm = GameObject.FindGameObjectWithTag ("RoundManager").GetComponent<RoundManager> ();
+        
 
         // get attack speed from character Script
         attackTime = characterScript.getAttackSpeed ();

@@ -42,12 +42,12 @@ public class SpawnClass : MonoBehaviour
 
 
         Debug.Log("Spawning bladeMaster");
-        if(P1CanSpawn == true)
+        if(P1CanSpawn == true )
         {
             //Spawn on player 1's side
             Instantiate(bladeMaster, new Vector3(0, 1, 0), Quaternion.identity);
             //RR: find a way to add to P1's P2's GameObject list
-        } else if(P2CanSpawn == true)
+        } else if(P2CanSpawn == true && P1CanSpawn == false)
         {
             //canSpawn is true for Player2
             Instantiate(bladeMaster, new Vector3(8, 1 , 6), Quaternion.identity);
