@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 4378888575533256545}
   - component: {fileID: 4378888575533256573}
   - component: {fileID: -4688138297911652450}
+  - component: {fileID: -2916241622295580625}
   m_Layer: 0
-  m_Name: Blademaster 1
+  m_Name: Blademaster 2
   m_TagString: TestPiece1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,16 +112,15 @@ MonoBehaviour:
   health: 0
   magicMax: 100
   magic: 0
-  physicalAttack: 1
-  magicaAttack: 1
-  physicalDefence: 5
-  magicDefence: 5
+  attackDamage: 0
+  attackType: Physical
+  armor: 0
+  resistance: 0
   attackRange: 1
   attackSpeed: 1.5
-  critAttPercentage: 0
-  evasionPercentage: 0
   healthRegenPercentage: 0
   Tile: {fileID: 0}
+  isdead: 0
 --- !u!114 &-4688138297911652450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,3 +133,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5e35ea94ef5944c88700dfd4ad82ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-2916241622295580625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4378888575533256546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 678c6ec74202c2040b672853d92c630c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rm: {fileID: 0}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  enemyTag: 
+  radius: 10
+  moveTimeSet: 1
