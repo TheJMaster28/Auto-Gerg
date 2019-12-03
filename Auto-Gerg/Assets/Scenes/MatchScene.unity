@@ -2792,7 +2792,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2002952153}
+      - m_Target: {fileID: 1265237190}
         m_MethodName: spawnBlademaster
         m_Mode: 1
         m_Arguments:
@@ -5277,7 +5277,7 @@ GameObject:
   - component: {fileID: 1045265070}
   m_Layer: 0
   m_Name: P2Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8161,7 +8161,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2002952153}
+      - m_Target: {fileID: 1265237190}
         m_MethodName: spawnRanger
         m_Mode: 1
         m_Arguments:
@@ -10396,7 +10396,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2002952153}
+      - m_Target: {fileID: 1265237190}
         m_MethodName: spawnGunslinger
         m_Mode: 1
         m_Arguments:
