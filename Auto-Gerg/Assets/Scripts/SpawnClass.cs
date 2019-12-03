@@ -12,12 +12,13 @@ public class SpawnClass : MonoBehaviour
     private GameObject linehandler;
     private Vector3 mousepos;
 
+    
+    
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-       
-
+        
     }
 
   
@@ -40,17 +41,26 @@ public class SpawnClass : MonoBehaviour
         bool P1CanSpawn = GameObject.FindGameObjectWithTag("Player1").GetComponent<PlayerManager>().getCanSpawn();
         bool P2CanSpawn = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerManager>().getCanSpawn();
 
+        GameObject P1 = GameObject.FindGameObjectWithTag("Player1");
+        GameObject P2 = GameObject.FindGameObjectWithTag("Player2");
+
 
         Debug.Log("Spawning bladeMaster");
         if(P1CanSpawn == true )
         {
             //Spawn on player 1's side
             Instantiate(bladeMaster, new Vector3(0, 1, 0), Quaternion.identity);
+
             //RR: find a way to add to P1's P2's GameObject list
+            P1.GetComponent<PlayerManager>().addToActiveField(bladeMaster);
+            Debug.Log("added blademaster to P1 active field list!");
+
         } else if(P2CanSpawn == true && P1CanSpawn == false)
         {
             //canSpawn is true for Player2
             Instantiate(bladeMaster, new Vector3(8, 1 , 6), Quaternion.identity);
+            P2.GetComponent<PlayerManager>().addToActiveField(bladeMaster);
+            Debug.Log("added blademaster to P2 active field list!");
         }
         
         

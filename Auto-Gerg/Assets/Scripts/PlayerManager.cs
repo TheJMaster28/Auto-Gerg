@@ -7,9 +7,8 @@ public class PlayerManager : MonoBehaviour
 {
 
     public GameObject Player;
-    public List<GameObject> activeField = new List<GameObject>();
+    public List<GameObject> activeFieldMonsters = new List<GameObject>();
 
-    
 
     //defaults
     private float Health = 100.0f;
@@ -70,6 +69,12 @@ public class PlayerManager : MonoBehaviour
     public bool getCanSpawn()
     {
         return canSpawn;
+    }
+
+    public void addToActiveField(GameObject fieldMonster)
+    {
+        activeFieldMonsters.Add(fieldMonster);
+        
     }
 
 }
