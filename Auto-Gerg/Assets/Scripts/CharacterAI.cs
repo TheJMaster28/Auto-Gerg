@@ -58,6 +58,7 @@ public class CharacterAI : MonoBehaviour {
     void Update () {
 
         if (rm.BattleCameraActive == false) {
+            // might want to change this when we get a implementation of it as ti will restrict dragging characters
             if (orginalTile != null) { GoBackToOrginalTile (); }
 
             orginalTile = characterScript.Tile;
