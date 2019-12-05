@@ -112,13 +112,15 @@ MonoBehaviour:
   health: 0
   magicMax: 100
   magic: 0
-  attackDamage: 0
+  attackDamage: 50
   attackType: Physical
-  armor: 0
-  resistance: 0
+  armor: 10
+  resistance: 10
   attackRange: 1
-  attackSpeed: 1.5
+  attackSpeed: 1
   healthRegenPercentage: 0
+  charClass: 
+  charRace: 
   Tile: {fileID: 0}
   isdead: 0
 --- !u!114 &-4688138297911652450
@@ -152,3 +154,4 @@ MonoBehaviour:
   enemyTag: 
   radius: 10
   moveTimeSet: 1
+  orginalTile: {fileID: 0}

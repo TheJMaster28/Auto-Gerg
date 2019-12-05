@@ -65,7 +65,9 @@ public class PlayerManager : MonoBehaviour {
     public void resetPieces () {
         foreach (GameObject chara in activeFieldMonsters) {
             chara.GetComponent<CharacterAI> ().GoBackToOrginalTile ();
+            chara.GetComponent<Character> ().revertHealth ();
         }
+
     }
 
 }

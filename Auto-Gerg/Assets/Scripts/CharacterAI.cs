@@ -221,7 +221,8 @@ public class CharacterAI : MonoBehaviour {
                     //     moveTurn = false;
                     //     return null;
                     // }
-                    if (piece.tag == enemyTag) {
+
+                    if (LayerMask.GetMask (piece.tag) == enemyLayer.value) {
                         moveTurn = false;
                         return null;
                     }
@@ -300,7 +301,7 @@ public class CharacterAI : MonoBehaviour {
                     //     //moveTurn = false;
                     //     return piece;
                     // }
-                    if (piece.tag == enemyTag) {
+                    if (LayerMask.GetMask (piece.tag) == enemyLayer.value) {
                         return piece;
                     }
 
