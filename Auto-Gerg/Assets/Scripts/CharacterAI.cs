@@ -59,7 +59,7 @@ public class CharacterAI : MonoBehaviour {
 
         if (rm.BattleCameraActive == false) {
             // might want to change this when we get a implementation of it as ti will restrict dragging characters
-            if (orginalTile != null) { GoBackToOrginalTile (); }
+            // if (orginalTile != null) { GoBackToOrginalTile (); }
 
             orginalTile = characterScript.Tile;
 
@@ -315,7 +315,7 @@ public class CharacterAI : MonoBehaviour {
 
     }
 
-    void GoBackToOrginalTile () {
+    public void GoBackToOrginalTile () {
 
         orginalTile.GetComponent<GroundTiles> ().chessPiece = gameObject;
 

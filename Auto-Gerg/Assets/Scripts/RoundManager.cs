@@ -73,10 +73,16 @@ public class RoundManager : MonoBehaviour
     //resets bool values for pre-round
     private void RoundReset()
     {
+
+        P1.GetComponent<PlayerManager>().resetPieces();
+        P2.GetComponent<PlayerManager>().resetPieces();
+
         P1.GetComponent<PlayerManager>().SetWonRound(false);
         P1.GetComponent<PlayerManager>().SetHasEnded(false);
+        
         P2.GetComponent<PlayerManager>().SetWonRound(false);
         P2.GetComponent<PlayerManager>().SetHasEnded(false);
+       
 
         roundCount++;
         currBattleTimer = startBattleTimer;
