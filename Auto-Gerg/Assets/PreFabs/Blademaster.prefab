@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 4378888575533256545}
   - component: {fileID: 4378888575533256573}
   - component: {fileID: -4688138297911652450}
-  - component: {fileID: -2916241622295580625}
+  - component: {fileID: 9059053074161657404}
   m_Layer: 0
-  m_Name: Blademaster 2
+  m_Name: Blademaster
   m_TagString: TestPiece1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5e35ea94ef5944c88700dfd4ad82ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-2916241622295580625
+--- !u!114 &9059053074161657404
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
