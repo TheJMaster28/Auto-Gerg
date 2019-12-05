@@ -30,12 +30,14 @@ public class CharacterAI : MonoBehaviour {
     // time to move character
     private float moveTime;
 
+    public GameObject orginalTile;
+
     // time between attacks
     private float attackTime;
-    private void Awake() {
+    private void Awake () {
 
         // grab RoundManager gameObject
-        rm = GameObject.FindGameObjectWithTag("RoundManager").GetComponent<RoundManager>();
+        rm = GameObject.FindGameObjectWithTag ("RoundManager").GetComponent<RoundManager> ();
 
     }
     void Start () {
@@ -48,14 +50,19 @@ public class CharacterAI : MonoBehaviour {
         moveTurn = true;
         moveTime = moveTimeSet;
 
-        
-
         // get attack speed from character Script
         attackTime = characterScript.getAttackSpeed ();
 
     }
 
     void Update () {
+
+        if (rm.BattleCameraActive == false) {
+            if (orginalTile != null) { GoBackToOrginalTile (); }
+
+            orginalTile = characterScript.Tile;
+
+        }
 
         // get new calls since scripts values change
         characterScript = gameObject.GetComponent<Character> ();
@@ -94,25 +101,23 @@ public class CharacterAI : MonoBehaviour {
 
             // attack enemy that is within range
             if (enemy != null) {
-				
-				float modifiedDamage = 0;
-				
-				//set modifiedDamage to damage - enemy armor or resistance//
-				if(characterScript.getAttackType() == "Physical")
-					modifiedDamage = characterScript.getAttackDamage () - enemy.GetComponent<Character>().getArmor();
-				else if(characterScript.getAttackType() == "Magical")
-					modifiedDamage = characterScript.getAttackDamage () - enemy.GetComponent<Character>().getResistance();
-				else
-					print("Set a proper Character Attack Type");
-				
-				//deal modifiedDamage to enemy
-				if(modifiedDamage > 0)
-					enemy.GetComponent<Character> ().health -= modifiedDamage;
-				else 
-					enemy.GetComponent<Character> ().health -= 1;
-				
-				
-				
+
+                float modifiedDamage = 0;
+
+                //set modifiedDamage to damage - enemy armor or resistance//
+                if (characterScript.getAttackType () == "Physical")
+                    modifiedDamage = characterScript.getAttackDamage () - enemy.GetComponent<Character> ().getArmor ();
+                else if (characterScript.getAttackType () == "Magical")
+                    modifiedDamage = characterScript.getAttackDamage () - enemy.GetComponent<Character> ().getResistance ();
+                else
+                    print ("Set a proper Character Attack Type");
+
+                //deal modifiedDamage to enemy
+                if (modifiedDamage > 0)
+                    enemy.GetComponent<Character> ().health -= modifiedDamage;
+                else
+                    enemy.GetComponent<Character> ().health -= 1;
+
             }
 
             // reset timer
@@ -306,6 +311,21 @@ public class CharacterAI : MonoBehaviour {
 
         moveTurn = true;
         return null;
+
+    }
+
+    void GoBackToOrginalTile () {
+
+        orginalTile.GetComponent<GroundTiles> ().chessPiece = gameObject;
+
+        // remove refernce from old tile
+        groundScript.chessPiece = null;
+
+        // move gameobject to the new tile
+        transform.position = orginalTile.GetComponent<GroundTiles> ().topPosition + new Vector3 (0f, .5f, 0f);
+
+        // set tile refernce to new tile
+        characterScript.Tile = orginalTile;
 
     }
 
