@@ -107,5 +107,15 @@ PrefabInstance:
       propertyPath: attackSpeed
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 4378888575533256573, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
+        type: 3}
+      propertyPath: charClass
+      value: Blademaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378888575533256573, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
+        type: 3}
+      propertyPath: charRace
+      value: Cultist
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d1943fa1e9dd6747b94b91fd4f5c597, type: 3}

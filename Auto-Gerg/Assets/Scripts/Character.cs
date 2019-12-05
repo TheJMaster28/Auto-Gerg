@@ -39,6 +39,11 @@ public class Character : MonoBehaviour
     [SerializeField]
     private float healthRegenPercentage;
 
+    [SerializeField]
+    private string charClass;
+
+    [SerializeField]
+    private string charRace;
 
     // Tile positions
     public static Vector3 position;
@@ -76,6 +81,14 @@ public class Character : MonoBehaviour
 
     public float getAttackSpeed() {
         return attackSpeed;
+    }
+
+    public string getClass(){
+        return charClass;
+    }
+
+    public string getRace(){
+        return charRace;
     }
 
     // Need to have this so I know the position for the piece at all times.

@@ -117,5 +117,15 @@ PrefabInstance:
       propertyPath: attackSpeed
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 4904982183201264865, guid: 2bc0d1a60641c5944becdeebf7f457d3,
+        type: 3}
+      propertyPath: charClass
+      value: Ranger
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904982183201264865, guid: 2bc0d1a60641c5944becdeebf7f457d3,
+        type: 3}
+      propertyPath: charRace
+      value: Fey
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bc0d1a60641c5944becdeebf7f457d3, type: 3}

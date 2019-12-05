@@ -989,7 +989,7 @@ PrefabInstance:
     - target: {fileID: 8625236873656561067, guid: 9e1ec76b6f148a84b82a604a89cac983,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8625236873656561067, guid: 9e1ec76b6f148a84b82a604a89cac983,
         type: 3}
@@ -3443,7 +3443,7 @@ PrefabInstance:
     - target: {fileID: 6045548395855160802, guid: 30b82a88cb425dc4b851eff97401cd9b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6045548395855160802, guid: 30b82a88cb425dc4b851eff97401cd9b,
         type: 3}
@@ -6917,7 +6917,7 @@ PrefabInstance:
     - target: {fileID: 6045548395855160802, guid: 30b82a88cb425dc4b851eff97401cd9b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6045548395855160802, guid: 30b82a88cb425dc4b851eff97401cd9b,
         type: 3}
@@ -9036,7 +9036,7 @@ PrefabInstance:
     - target: {fileID: 9030137615699006987, guid: cb6e0d3097917644d8b22e646c9aadf1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9030137615699006987, guid: cb6e0d3097917644d8b22e646c9aadf1,
         type: 3}
@@ -10016,7 +10016,7 @@ PrefabInstance:
     - target: {fileID: 9030137615699006987, guid: cb6e0d3097917644d8b22e646c9aadf1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9030137615699006987, guid: cb6e0d3097917644d8b22e646c9aadf1,
         type: 3}
@@ -11042,7 +11042,7 @@ PrefabInstance:
     - target: {fileID: 8625236873656561067, guid: 9e1ec76b6f148a84b82a604a89cac983,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8625236873656561067, guid: 9e1ec76b6f148a84b82a604a89cac983,
         type: 3}
@@ -11365,6 +11365,8 @@ MonoBehaviour:
   attackRange: 0
   attackSpeed: 0
   healthRegenPercentage: 0
+  charClass: 
+  charRace: 
   Tile: {fileID: 0}
   isdead: 0
 --- !u!65 &2137448613
