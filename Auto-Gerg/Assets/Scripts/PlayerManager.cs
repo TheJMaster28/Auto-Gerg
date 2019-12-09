@@ -33,6 +33,7 @@ public class PlayerManager : MonoBehaviour {
         return hasWonRound;
     }
 
+
     public void SetHasEnded (bool hg) {
         hasEnded = hg;
     }
