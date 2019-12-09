@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pixie
       objectReference: {fileID: 0}
+    - target: {fileID: 4904982183201264879, guid: 2bc0d1a60641c5944becdeebf7f457d3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 274135ff885fe184eac14b363aaad208, type: 2}
     - target: {fileID: 4904982183201264877, guid: 2bc0d1a60641c5944becdeebf7f457d3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,20 +72,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4904982183201264879, guid: 2bc0d1a60641c5944becdeebf7f457d3,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 274135ff885fe184eac14b363aaad208, type: 2}
     - target: {fileID: 4904982183201264865, guid: 2bc0d1a60641c5944becdeebf7f457d3,
         type: 3}
       propertyPath: healthMax
-      value: 550
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4904982183201264865, guid: 2bc0d1a60641c5944becdeebf7f457d3,
         type: 3}
       propertyPath: health
-      value: 550
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4904982183201264865, guid: 2bc0d1a60641c5944becdeebf7f457d3,
         type: 3}

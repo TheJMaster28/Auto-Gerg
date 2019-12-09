@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1975706806263913593
+--- !u!1 &740281512379230323
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1975706806263913573}
-  - component: {fileID: 1975706806263913572}
-  - component: {fileID: 1975706806263913595}
-  - component: {fileID: 1975706806263913594}
-  - component: {fileID: 1975706806263913574}
-  - component: {fileID: 2781058983625166453}
-  - component: {fileID: 295074882615994315}
+  - component: {fileID: 740281512379230319}
+  - component: {fileID: 740281512379230318}
+  - component: {fileID: 740281512379230321}
+  - component: {fileID: 740281512379230320}
+  - component: {fileID: 740281512379230316}
+  - component: {fileID: 4014205539124427391}
+  - component: {fileID: 1528213172182242241}
   m_Layer: 0
-  m_Name: Cannon Ogre
+  m_Name: Sniper
   m_TagString: TestPiece1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1975706806263913573
+--- !u!4 &740281512379230319
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1975706806263913593}
+  m_GameObject: {fileID: 740281512379230323}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.1371734, y: 0.7003348, z: 2.0026941}
+  m_LocalPosition: {x: 1.7370515, y: 1.01, z: 1.7677722}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1975706806263913572
+--- !u!33 &740281512379230318
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1975706806263913593}
+  m_GameObject: {fileID: 740281512379230323}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1975706806263913595
+--- !u!23 &740281512379230321
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1975706806263913593}
+  m_GameObject: {fileID: 740281512379230323}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5108fe2c54d4c0747ae5dc5c3654daca, type: 2}
+  - {fileID: 2100000, guid: 51fe6d4454ff9cd4dbc6bde75546c347, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,13 +82,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &1975706806263913594
+--- !u!136 &740281512379230320
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1975706806263913593}
+  m_GameObject: {fileID: 740281512379230323}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -96,52 +96,52 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1975706806263913574
+--- !u!114 &740281512379230316
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1975706806263913593}
+  m_GameObject: {fileID: 740281512379230323}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: adf2a7dbe489bc04fbcf27738be7365e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthMax: 650
-  health: 650
+  healthMax: 500
+  health: 500
   magicMax: 100
   magic: 0
-  attackDamage: 60
+  attackDamage: 55
   attackType: Physical
-  armor: 40
-  resistance: 24
-  attackRange: 3
-  attackSpeed: 0.55
+  armor: 25
+  resistance: 25
+  attackRange: 5
+  attackSpeed: 0.6
   healthRegenPercentage: 0
   charClass: Gunslinger
-  charRace: Twisted
+  charRace: Human
   Tile: {fileID: 0}
   isdead: 0
---- !u!114 &2781058983625166453
+--- !u!114 &4014205539124427391
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1975706806263913593}
+  m_GameObject: {fileID: 740281512379230323}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c5e35ea94ef5944c88700dfd4ad82ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &295074882615994315
+--- !u!114 &1528213172182242241
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1975706806263913593}
+  m_GameObject: {fileID: 740281512379230323}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 678c6ec74202c2040b672853d92c630c, type: 3}
@@ -153,5 +153,5 @@ MonoBehaviour:
     m_Bits: 0
   enemyTag: 
   radius: 10
-  moveTimeSet: 1
+  moveTimeSet: 0.75
   orginalTile: {fileID: 0}
