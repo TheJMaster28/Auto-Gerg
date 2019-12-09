@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CharacterChanger : MonoBehaviour
-{
+public class CharacterChanger : MonoBehaviour {
     public Image randomImage;
     public Sprite s0;
     public Sprite s1;
@@ -15,35 +14,29 @@ public class CharacterChanger : MonoBehaviour
     public GameObject P1;
     public GameObject P2;
 
-    void Start()
-    {
+    public string imageName;
+
+    void Start () {
         images = new Sprite[4];
         images[0] = s0;
         images[1] = s1;
         images[2] = s2;
         images[3] = s3;
-        changeImage();
+        changeImage ();
     }
 
-    public void changeImage()
-    {
+    public void changeImage () {
 
-
-
-
-        int num = UnityEngine.Random.Range(0, images.Length);
+        int num = UnityEngine.Random.Range (0, images.Length);
         randomImage.sprite = images[num];
-
-
+        imageName = images[num].name;
 
     }
 
-    
-    private void Update()
-    {
+    private void Update () {
 
-        bool p1HasEnded = P1.GetComponent<PlayerManager>().GetHasEnded();
-        bool p2HasEnded = P2.GetComponent<PlayerManager>().GetHasEnded();
+        bool p1HasEnded = P1.GetComponent<PlayerManager> ().GetHasEnded ();
+        bool p2HasEnded = P2.GetComponent<PlayerManager> ().GetHasEnded ();
 
         /*
          *NOT USING ATM
@@ -56,14 +49,12 @@ public class CharacterChanger : MonoBehaviour
          */
 
         //Player 2 hasGone Player 1 has not, switch to Player 1 Cam
-        if (p1HasEnded == false && p2HasEnded == true)
-        {
-            changeImage();
+        if (p1HasEnded == false && p2HasEnded == true) {
+            changeImage ();
         }
         //Both players have ended their turn, switch to battle
-        else if (p1HasEnded = true && p2HasEnded == true)
-        {
-            changeImage();
+        else if (p1HasEnded = true && p2HasEnded == true) {
+            changeImage ();
         }
 
     }

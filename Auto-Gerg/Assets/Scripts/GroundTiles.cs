@@ -30,7 +30,7 @@ public class GroundTiles : MonoBehaviour {
         topPosition = position + extra;
         //print(position);        testing to make sure that im getting correct position
         gameBoard = GameObject.FindGameObjectWithTag ("Board").GetComponent<Board> ();
-        print (gameObject.name);
+        // print (gameObject.name);
         CreateAdjectTileList ();
 
     }

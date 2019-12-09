@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SpawnClass : MonoBehaviour {
 
-    public GameObject bladeMaster;
-    public GameObject Ranger;
-    public GameObject Gunslinger;
+    public GameObject bladeMasterSelector;
+    public GameObject rangerSelector;
+    public GameObject gunslingerSelector;
 
     private GameObject linehandler;
     private Vector3 mousepos;
@@ -30,18 +30,24 @@ public class SpawnClass : MonoBehaviour {
 
     public void spawnBlademaster () {
         Debug.Log ("Spawning bladeMaster");
-        SpawnCharacter (bladeMaster);
+        string objetName = bladeMasterSelector.GetComponent<CharacterChanger> ().imageName;
+        GameObject b = Resources.Load (objetName) as GameObject;
+        SpawnCharacter (b);
     }
 
     public void spawnGunslinger () {
         Debug.Log ("Spawning gunslinger");
-        SpawnCharacter (Gunslinger);
+        string objetName = gunslingerSelector.GetComponent<CharacterChanger> ().imageName;
+        GameObject b = Resources.Load (objetName) as GameObject;
+        SpawnCharacter (b);
 
     }
 
     public void spawnRanger () {
         Debug.Log ("Spawning ranger");
-        SpawnCharacter (Ranger);
+        string objetName = rangerSelector.GetComponent<CharacterChanger> ().imageName;
+        GameObject b = Resources.Load (objetName) as GameObject;
+        SpawnCharacter (b);
 
     }
 
