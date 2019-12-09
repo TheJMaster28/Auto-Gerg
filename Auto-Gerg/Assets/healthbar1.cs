@@ -33,6 +33,7 @@ public class healthbar1 : MonoBehaviour
             {
                 dead.text = "";
             }
+            takeDamage = false;
         }
         if (takeDamage2 == true)
         {
@@ -48,6 +49,7 @@ public class healthbar1 : MonoBehaviour
             {
                 dead2.text = "";
             }
+            takeDamage2 = false;
         }
     }
 }
