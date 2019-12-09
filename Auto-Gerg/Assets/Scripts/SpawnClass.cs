@@ -5,7 +5,14 @@ using UnityEngine;
 
 public class SpawnClass : MonoBehaviour {
 
-    public int BSynInc = 0;
+    public int BSynInc1 = 0;
+    public int RSynInc1 = 0;
+    public int GSynInc1 = 0;
+
+    public int BSynInc2 = 0;
+    public int RSynInc2 = 0;
+    public int GSynInc2 = 0;
+
     public GameObject bladeMasterSelector;
     public GameObject rangerSelector;
     public GameObject gunslingerSelector;
@@ -17,6 +24,7 @@ public class SpawnClass : MonoBehaviour {
     // Start is called before the first frame update
     void Awake () {
 
+        //GameObject.FindGameObjectWithTag("Blademaster_SynIcon_P1").GetComponent<Image>().color = new Color32(106, 106, 106, 255);
     }
 
     void Update () {
@@ -28,7 +36,13 @@ public class SpawnClass : MonoBehaviour {
 
         mousepos = Camera.main.ScreenToWorldPoint(mousepos);
         */
-        BladeMasterSynergyActivate();
+        RangerSynergyActivate1();
+        BladeMasterSynergyActivate1();
+        GunslingerSynergyActivate1();
+
+        RangerSynergyActivate2();
+        BladeMasterSynergyActivate2();
+        GunslingerSynergyActivate2();
 
     }
 
@@ -37,6 +51,8 @@ public class SpawnClass : MonoBehaviour {
         string objetName = bladeMasterSelector.GetComponent<CharacterChanger> ().imageName;
         GameObject b = Resources.Load (objetName) as GameObject;
         SpawnCharacter (b);
+        //BSynInc++;
+        //Debug.Log(BSynInc);
     }
 
     public void spawnGunslinger () {
@@ -44,7 +60,8 @@ public class SpawnClass : MonoBehaviour {
         string objetName = gunslingerSelector.GetComponent<CharacterChanger> ().imageName;
         GameObject b = Resources.Load (objetName) as GameObject;
         SpawnCharacter (b);
-
+        //GSynInc++;
+        //Debug.Log(GSynInc);
     }
 
     public void spawnRanger () {
@@ -52,16 +69,65 @@ public class SpawnClass : MonoBehaviour {
         string objetName = rangerSelector.GetComponent<CharacterChanger> ().imageName;
         GameObject b = Resources.Load (objetName) as GameObject;
         SpawnCharacter (b);
+        //RSynInc++;
+        //Debug.Log(RSynInc);
 
     }
 
-    public void BladeMasterSynergyActivate()
+    public void BladeMasterSynergyActivate2()
     {
-        if (BSynInc > 2)
+        if (BSynInc2 > 1)
         {
-            GameObject.FindGameObjectWithTag("Blademaster_SynIcon_P1").GetComponent<Image>().color = new Color32(1, 1, 1, 0); 
+            GameObject.FindGameObjectWithTag("Blademaster_SynIcon_P2").GetComponent<Image>().color = new Color32(250, 63, 63, 255);
+        }
+
+    }
+
+    public void RangerSynergyActivate2()
+    {
+        if (RSynInc2 > 1)
+        {
+            GameObject.FindGameObjectWithTag("Ranger_SynIcon_P2").GetComponent<Image>().color = new Color32(31, 224, 54, 255);
+        }
+
+    }
+
+    public void GunslingerSynergyActivate2()
+    {
+        if (GSynInc2 > 1)
+        {
+            GameObject.FindGameObjectWithTag("Gunslinger_SynIcon_P2").GetComponent<Image>().color = new Color32(243, 174, 106, 255);
+        }
+
+    }
+
+    //END ACTIVATION OF P2 SYNERGY
+
+    public void BladeMasterSynergyActivate1()
+    {
+        if (BSynInc1 > 1)
+        {
+            GameObject.FindGameObjectWithTag("Blademaster_SynIcon_P1").GetComponent<Image>().color = new Color32(250, 63, 63, 255); 
         }
        
+    }
+
+    public void RangerSynergyActivate1()
+    {
+        if (RSynInc1 > 1)
+        {
+            GameObject.FindGameObjectWithTag("Ranger_SynIcon_P1").GetComponent<Image>().color = new Color32(31, 224, 54, 255);
+        }
+
+    }
+
+    public void GunslingerSynergyActivate1()
+    {
+        if (GSynInc1 > 1)
+        {
+            GameObject.FindGameObjectWithTag("Gunslinger_SynIcon_P1").GetComponent<Image>().color = new Color32(243,174,106, 255);
+        }
+
     }
 
 
@@ -84,6 +150,15 @@ public class SpawnClass : MonoBehaviour {
             P1.GetComponent<PlayerManager> ().addToActiveField (newGO);
             Debug.Log ("added blademaster to P1 active field list!");
 
+            string obj1 = newGO.GetComponent<Character>().getClass();
+            if (obj1 == "Blademaster") BSynInc1++; //player 1 blademaster syn increase 
+
+            string obj2 = newGO.GetComponent<Character>().getClass();
+            if (obj2 == "Ranger") RSynInc1++; //player 1 blademaster syn increase 
+
+            string obj3 = newGO.GetComponent<Character>().getClass();
+            if (obj2 == "Gunslinger") GSynInc1++; //player 1 blademaster syn increase 
+
         } else if (P2CanSpawn == true && P1CanSpawn == false) {
             //canSpawn is true for Player2
             GameObject newGO = Instantiate (g, new Vector3 (8, 1, 6), Quaternion.identity);
@@ -93,6 +168,15 @@ public class SpawnClass : MonoBehaviour {
             newGO.GetComponent<CharacterAI> ().enemyLayer = LayerMask.GetMask ("Player1");
             P2.GetComponent<PlayerManager> ().addToActiveField (newGO);
             Debug.Log ("added blademaster to P2 active field list!");
+
+            string obj4 = newGO.GetComponent<Character>().getClass();
+            if (obj4 == "Blademaster") BSynInc2++; //player 1 blademaster syn increase 
+
+            string obj5 = newGO.GetComponent<Character>().getClass();
+            if (obj5 == "Ranger") RSynInc2++; //player 1 blademaster syn increase 
+
+            string obj6 = newGO.GetComponent<Character>().getClass();
+            if (obj6 == "Gunslinger") GSynInc2++; //player 1 blademaster syn increase 
         }
 
         //USED FOR MOUSE POSITION NOT IN USE NOW

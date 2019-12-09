@@ -12,6 +12,11 @@ TagManager:
   - TestPiece2
   - Player1
   - Blademaster_SynIcon_P1
+  - Ranger_SynIcon_P1
+  - Gunslinger_SynIcon_P1
+  - Blademaster_SynIcon_P2
+  - Ranger_SynIcon_P2
+  - Gunslinger_SynIcon_P2
   layers:
   - Default
   - TransparentFX
