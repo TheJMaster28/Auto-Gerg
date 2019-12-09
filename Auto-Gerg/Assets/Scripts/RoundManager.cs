@@ -19,6 +19,9 @@ public class RoundManager : MonoBehaviour {
     public static float startBattleTimer = 15.0f;
     float currBattleTimer = startBattleTimer;
 
+    public bool P1AllMonstersDead;
+    public bool P2AllMonstersDead;
+
     // Start is called before the first frame update
     void Awake () {
         roundCount = 1;
@@ -38,13 +41,20 @@ public class RoundManager : MonoBehaviour {
             P2.GetComponent<PlayerManager>().setCanSpawn(false);
         }
 
-        //Timer to end battle for now
+
         if (BattleCamera.active == true) {
-            currBattleTimer -= Time.deltaTime;
-            Debug.Log ("Timer: " + currBattleTimer);
-            if (currBattleTimer <= 0) {
-                RoundReset ();
-                CameraTurnManager ();
+
+            if (P1AllMonstersDead == true) {
+                P2.GetComponent<PlayerManager>().SetWonRound(true); 
+                //UI Announce P1 round winner
+                RoundReset();
+                CameraTurnManager();
+            } else if(P2AllMonstersDead == true)
+            {
+                P1.GetComponent<PlayerManager>().SetWonRound(true);
+                //UI Announce P2 as round winner
+                RoundReset();
+                CameraTurnManager();
             }
         }
 

@@ -71,4 +71,12 @@ public class PlayerManager : MonoBehaviour {
 
     }
 
+    public bool checkAllDeadMonsters()
+    {
+        bool alive;
+        //return false if we find at least on not dead monster
+        
+        return true;
+    }
+
 }
