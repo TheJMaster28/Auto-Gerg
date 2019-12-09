@@ -5,13 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - RoundManager
-  - Blademaster_Synergy
   - Board
   - TestPiece1
   - Player2
   - GroundTile
   - TestPiece2
   - Player1
+  - Blademaster_SynIcon_P1
   layers:
   - Default
   - TransparentFX

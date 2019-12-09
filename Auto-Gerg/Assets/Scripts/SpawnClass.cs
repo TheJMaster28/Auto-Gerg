@@ -1,15 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class SpawnClass : MonoBehaviour {
 
+    public int BSynInc = 0;
     public GameObject bladeMasterSelector;
     public GameObject rangerSelector;
     public GameObject gunslingerSelector;
 
     private GameObject linehandler;
     private Vector3 mousepos;
+
 
     // Start is called before the first frame update
     void Awake () {
@@ -25,6 +28,7 @@ public class SpawnClass : MonoBehaviour {
 
         mousepos = Camera.main.ScreenToWorldPoint(mousepos);
         */
+        BladeMasterSynergyActivate();
 
     }
 
@@ -50,6 +54,16 @@ public class SpawnClass : MonoBehaviour {
         SpawnCharacter (b);
 
     }
+
+    public void BladeMasterSynergyActivate()
+    {
+        if (BSynInc > 2)
+        {
+            GameObject.FindGameObjectWithTag("Blademaster_SynIcon_P1").GetComponent<Image>().color = new Color32(1, 1, 1, 0); 
+        }
+       
+    }
+
 
     private void SpawnCharacter (GameObject g) {
         bool P1CanSpawn = GameObject.FindGameObjectWithTag ("Player1").GetComponent<PlayerManager> ().getCanSpawn ();
