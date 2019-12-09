@@ -11,7 +11,7 @@ public class PlayerManager : MonoBehaviour {
     //defaults
     private float Health = 100.0f;
     private bool hasWonRound = false;
-    public bool canSpawn = true;
+    private bool canSpawn = true;
     public bool hasEnded = false;
     private int bladeMasterSynergyCount = 5;
 
@@ -22,7 +22,7 @@ public class PlayerManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (!canSpawn) Debug.Log ("Cannot Spawn");
+         
     }
 
     public void SetWonRound (bool wr) {

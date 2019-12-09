@@ -12,7 +12,7 @@ public class RoundManager : MonoBehaviour {
     public GameObject BattleCamera;
 
     private int bladeMasterSynCount;
-    public int roundCount = 0;
+    public int roundCount;
 
     public bool BattleCameraActive = false;
 
@@ -21,11 +21,22 @@ public class RoundManager : MonoBehaviour {
 
     // Start is called before the first frame update
     void Awake () {
-
+        roundCount = 1;
     }
 
     // Update is called once per frame
     void Update () {
+        if(P1.GetComponent<PlayerManager>().activeFieldMonsters.Count == roundCount && P1.GetComponent<PlayerManager>().GetHasEnded() == false) //player 1 hit max spawns for the round
+        {
+            if (P1.GetComponent<PlayerManager>().getCanSpawn() == false) { Debug.Log("P1 Max Spawn reached for the round"); } //change this to UI later
+            P1.GetComponent<PlayerManager>().setCanSpawn(false);
+        }
+
+        if (P2.GetComponent<PlayerManager>().activeFieldMonsters.Count == roundCount && P2.GetComponent<PlayerManager>().GetHasEnded() == false) //player 2 hit max spawns for the round
+        {
+            if (P2.GetComponent<PlayerManager>().getCanSpawn() == false) { Debug.Log("P2 Max Spawn reached for the round"); } //change this to UI later
+            P2.GetComponent<PlayerManager>().setCanSpawn(false);
+        }
 
         //Timer to end battle for now
         if (BattleCamera.active == true) {
@@ -41,7 +52,7 @@ public class RoundManager : MonoBehaviour {
         bladeMasterSynCount = P1.GetComponent<PlayerManager> ().getBladeMasterSynergyCount ();
 
         if (bladeMasterSynCount > 1) {
-            // GameObject.FindGameObjectWithTag("Blademaster_Synergy").GetComponent<Image>().color = new Color32(233, 36, 21, 100);
+            GameObject.FindGameObjectWithTag("Blademaster_Synergy").GetComponent<Image>().color = new Color32(233, 36, 21, 100);
 
         }
     }

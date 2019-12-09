@@ -158,8 +158,9 @@ public class SpawnClass : MonoBehaviour {
 
             string obj3 = newGO.GetComponent<Character>().getClass();
             if (obj2 == "Gunslinger") GSynInc1++; //player 1 blademaster syn increase 
-
-        } else if (P2CanSpawn == true && P1CanSpawn == false) {
+            
+        } else if (P2CanSpawn == true && P1.GetComponent<PlayerManager>().GetHasEnded() == true) {  
+        //else if (P2CanSpawn == true && P1CanSpawn == false) {
             //canSpawn is true for Player2
             GameObject newGO = Instantiate (g, new Vector3 (8, 1, 6), Quaternion.identity);
             newGO.tag = "Player2";
