@@ -53,9 +53,14 @@ public class Character : MonoBehaviour {
     public bool isdead = false;
     
 
+    public AudioClip deathSound;
+
+    private AudioSource s;
+
     // functions for awake and accessing stats
     private void Awake () {
         health = healthMax;
+        s = GetComponent<AudioSource> ();
     }
 
     public bool getIsDead ()
@@ -111,6 +116,8 @@ public class Character : MonoBehaviour {
 
         if (health < 0 && !isdead) {
             isdead = true;
+            s.clip = deathSound;
+            s.Play ();
             print ("DEAD!!!!!");
             transform.position += new Vector3 (0, -1f, 0);
         }

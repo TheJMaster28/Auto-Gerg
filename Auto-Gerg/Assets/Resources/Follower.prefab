@@ -1,5 +1,101 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!82 &4771284612098779445
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7849884251762200118}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &5779397979330117972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12,6 +108,66 @@ PrefabInstance:
       propertyPath: m_Name
       value: Follower
       objectReference: {fileID: 0}
+    - target: {fileID: 9059053074161657404, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
+        type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 321e1aec57a02684db012ae444ebf707, type: 3}
+    - target: {fileID: 4378888575533256573, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
+        type: 3}
+      propertyPath: healthMax
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378888575533256573, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
+        type: 3}
+      propertyPath: health
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378888575533256573, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
+        type: 3}
+      propertyPath: magicMax
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378888575533256573, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
+        type: 3}
+      propertyPath: attackDamage
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378888575533256573, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
+        type: 3}
+      propertyPath: armor
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378888575533256573, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
+        type: 3}
+      propertyPath: resistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378888575533256573, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
+        type: 3}
+      propertyPath: attackRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378888575533256573, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
+        type: 3}
+      propertyPath: attackSpeed
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378888575533256573, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
+        type: 3}
+      propertyPath: charClass
+      value: Blademaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378888575533256573, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
+        type: 3}
+      propertyPath: charRace
+      value: Cultist
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378888575533256573, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
+        type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 321e1aec57a02684db012ae444ebf707, type: 3}
     - target: {fileID: 4378888575533256574, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -72,55 +228,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 94833426e0aecff4890715d5b44384c6, type: 2}
-    - target: {fileID: 4378888575533256573, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
-        type: 3}
-      propertyPath: healthMax
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 4378888575533256573, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
-        type: 3}
-      propertyPath: health
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 4378888575533256573, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
-        type: 3}
-      propertyPath: magicMax
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4378888575533256573, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
-        type: 3}
-      propertyPath: attackDamage
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 4378888575533256573, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
-        type: 3}
-      propertyPath: armor
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 4378888575533256573, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
-        type: 3}
-      propertyPath: resistance
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4378888575533256573, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
-        type: 3}
-      propertyPath: attackRange
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4378888575533256573, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
-        type: 3}
-      propertyPath: attackSpeed
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4378888575533256573, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
-        type: 3}
-      propertyPath: charClass
-      value: Blademaster
-      objectReference: {fileID: 0}
-    - target: {fileID: 4378888575533256573, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
-        type: 3}
-      propertyPath: charRace
-      value: Cultist
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d1943fa1e9dd6747b94b91fd4f5c597, type: 3}
+--- !u!1 &7849884251762200118 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4378888575533256546, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
+    type: 3}
+  m_PrefabInstance: {fileID: 5779397979330117972}
+  m_PrefabAsset: {fileID: 0}
