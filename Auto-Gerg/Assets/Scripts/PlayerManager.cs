@@ -21,11 +21,10 @@ public class PlayerManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-         
+
     }
 
-    public float getHealth()
-    {
+    public float getHealth () {
         return Health;
     }
 
@@ -36,7 +35,6 @@ public class PlayerManager : MonoBehaviour {
     public bool GetWonRound () {
         return hasWonRound;
     }
-
 
     public void SetHasEnded (bool hg) {
         hasEnded = hg;
@@ -65,24 +63,22 @@ public class PlayerManager : MonoBehaviour {
 
     public void resetPieces () {
         foreach (GameObject chara in activeFieldMonsters) {
+            chara.GetComponent<Character> ().setIsDead (false);
             chara.GetComponent<CharacterAI> ().GoBackToOrginalTile ();
             chara.GetComponent<Character> ().revertHealth ();
-            chara.GetComponent<Character>().setIsDead(false);
         }
 
     }
 
-    public bool checkAllDeadMonsters()
-    {
+    public bool checkAllDeadMonsters () {
         //return false for 1st round, when there are no monsters spawned yet
-        int currentRound = GameObject.FindGameObjectWithTag("RoundManager").GetComponent<RoundManager>().roundCount;
-        bool activeBattle = GameObject.FindGameObjectWithTag("RoundManager").GetComponent<RoundManager>().BattleActive;
+        int currentRound = GameObject.FindGameObjectWithTag ("RoundManager").GetComponent<RoundManager> ().roundCount;
+        bool activeBattle = GameObject.FindGameObjectWithTag ("RoundManager").GetComponent<RoundManager> ().BattleActive;
         if (currentRound == 1 && activeBattle == false) return false;
 
         //return false if we find at least one not dead monster
-        foreach (GameObject chara in activeFieldMonsters)
-        {
-            if (chara.GetComponent<Character>().getIsDead() == false)
+        foreach (GameObject chara in activeFieldMonsters) {
+            if (chara.GetComponent<Character> ().getIsDead () == false)
                 return false;
         }
 
