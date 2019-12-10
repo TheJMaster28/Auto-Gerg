@@ -43,7 +43,6 @@ public class Character : MonoBehaviour {
     [SerializeField]
     private string charRace;
 
-   
     // Tile positions
     public static Vector3 position;
     public static Vector3 baseSub = new Vector3 (0f, -.5f, 0);
@@ -51,7 +50,6 @@ public class Character : MonoBehaviour {
 
     public GameObject Tile;
     public bool isdead = false;
-    
 
     public AudioClip deathSound;
 
@@ -63,8 +61,7 @@ public class Character : MonoBehaviour {
         s = GetComponent<AudioSource> ();
     }
 
-    public bool getIsDead ()
-    {
+    public bool getIsDead () {
         return isdead;
     }
 
@@ -104,8 +101,7 @@ public class Character : MonoBehaviour {
         isdead = false;
     }
 
-    public void setIsDead(bool d)
-    {
+    public void setIsDead (bool d) {
         isdead = d;
     }
 
@@ -116,6 +112,7 @@ public class Character : MonoBehaviour {
 
         if (health < 0 && !isdead) {
             isdead = true;
+            Tile.GetComponent<GroundTiles> ().chessPiece = null;
             s.clip = deathSound;
             s.Play ();
             print ("DEAD!!!!!");

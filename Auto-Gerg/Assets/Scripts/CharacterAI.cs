@@ -273,7 +273,7 @@ public class CharacterAI : MonoBehaviour {
         for (int i = 0; i < hits.Length; i++) {
             Vector3 enemyPostion = hits[i].transform.position;
             float dis = Vector3.Distance (transform.position, enemyPostion);
-            if (close > dis) {
+            if (close > dis && !hits[i].GetComponent<Character> ().isdead) {
                 close = dis;
                 closeV = enemyPostion;
             }
@@ -302,7 +302,10 @@ public class CharacterAI : MonoBehaviour {
                     //     return piece;
                     // }
                     if (LayerMask.GetMask (piece.tag) == enemyLayer.value) {
-                        return piece;
+                        if (!piece.GetComponent<Character> ().isdead) {
+                            return piece;
+                        }
+
                     }
 
                 }
