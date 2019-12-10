@@ -2899,7 +2899,9 @@ MonoBehaviour:
   P2: {fileID: 40156382}
   BattleCamera: {fileID: 97484747}
   roundCount: 0
-  BattleCameraActive: 0
+  BattleActive: 0
+  P1AllMonstersDead: 0
+  P2AllMonstersDead: 0
 --- !u!4 &416256439
 Transform:
   m_ObjectHideFlags: 0
@@ -8642,7 +8644,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9150943, g: 0.14083385, b: 0.082013145, a: 0.7607843}
+    m_HighlightedColor: {r: 0.9150943, g: 0.14083385, b: 0.082013145, a: 1}
     m_PressedColor: {r: 0.91372555, g: 0.14117648, b: 0.08235294, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
