@@ -8816,7 +8816,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -13997,7 +13997,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -14730,6 +14730,7 @@ MonoBehaviour:
   charRace: 
   Tile: {fileID: 0}
   isdead: 0
+  deathSound: {fileID: 0}
 --- !u!65 &2137448613
 BoxCollider:
   m_ObjectHideFlags: 0
