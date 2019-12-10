@@ -67,7 +67,12 @@ public class Character : MonoBehaviour {
     {
         return isdead;
     }
-
+    public float getHealthMax(){
+        return healthMax;
+    }
+    public float getHealth(){
+        return health;
+    }
     public float getAttackDamage () {
         return attackDamage;
     }
