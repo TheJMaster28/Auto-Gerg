@@ -11,13 +11,9 @@ public class RoundManager : MonoBehaviour {
     public GameObject P2;
     public GameObject BattleCamera;
 
-    private int bladeMasterSynCount;
     public int roundCount;
 
-    public bool BattleCameraActive = false;
-
-    public static float startBattleTimer = 15.0f;
-    float currBattleTimer = startBattleTimer;
+    public bool BattleActive;
 
     public bool P1AllMonstersDead;
     public bool P2AllMonstersDead;
@@ -25,45 +21,57 @@ public class RoundManager : MonoBehaviour {
     // Start is called before the first frame update
     void Awake () {
         roundCount = 1;
+        BattleActive = false;
     }
 
     // Update is called once per frame
     void Update () {
-        if(P1.GetComponent<PlayerManager>().activeFieldMonsters.Count == roundCount && P1.GetComponent<PlayerManager>().GetHasEnded() == false) //player 1 hit max spawns for the round
+        P1AllMonstersDead = P1.GetComponent<PlayerManager>().checkAllDeadMonsters();
+        Debug.Log("P1AllMonstersDead: " +
+            P1AllMonstersDead);
+        P2AllMonstersDead = P2.GetComponent<PlayerManager>().checkAllDeadMonsters();
+        Debug.Log("P2AllMonstersDead: " +
+           P1AllMonstersDead);
+
+        if (P1.GetComponent<PlayerManager>().activeFieldMonsters.Count >= roundCount && P1.GetComponent<PlayerManager>().GetHasEnded() == false) //player 1 hit max spawns for the round
         {
             if (P1.GetComponent<PlayerManager>().getCanSpawn() == false) { Debug.Log("P1 Max Spawn reached for the round"); } //change this to UI later
             P1.GetComponent<PlayerManager>().setCanSpawn(false);
         }
 
-        if (P2.GetComponent<PlayerManager>().activeFieldMonsters.Count == roundCount && P2.GetComponent<PlayerManager>().GetHasEnded() == false) //player 2 hit max spawns for the round
+        if (P2.GetComponent<PlayerManager>().activeFieldMonsters.Count >= roundCount && P2.GetComponent<PlayerManager>().GetHasEnded() == false) //player 2 hit max spawns for the round
         {
             if (P2.GetComponent<PlayerManager>().getCanSpawn() == false) { Debug.Log("P2 Max Spawn reached for the round"); } //change this to UI later
             P2.GetComponent<PlayerManager>().setCanSpawn(false);
         }
 
 
-        if (BattleCamera.active == true) {
+        if (BattleActive == true) {
 
             if (P1AllMonstersDead == true) {
-                P2.GetComponent<PlayerManager>().SetWonRound(true); 
+                P2.GetComponent<PlayerManager>().SetWonRound(true);
                 //UI Announce P1 round winner
+                //P2 take damage
+                P2.GetComponent<PlayerManager>().TakeDamage(10);
                 RoundReset();
-                CameraTurnManager();
             } else if(P2AllMonstersDead == true)
             {
                 P1.GetComponent<PlayerManager>().SetWonRound(true);
                 //UI Announce P2 as round winner
+                //P1 take damage
+                P1.GetComponent<PlayerManager>().TakeDamage(10);
                 RoundReset();
-                CameraTurnManager();
             }
         }
 
-        //blademasterSynergy count
-        bladeMasterSynCount = P1.GetComponent<PlayerManager> ().getBladeMasterSynergyCount ();
-
-        if (bladeMasterSynCount > 1) {
-            GameObject.FindGameObjectWithTag("Blademaster_Synergy").GetComponent<Image>().color = new Color32(233, 36, 21, 100);
-
+        //Be checking for ultimate winner
+        if(P1.GetComponent<PlayerManager>().getHealth() < 0.0f)
+        {
+            //oof p1
+        }
+        else if (P2.GetComponent<PlayerManager>().getHealth() < 0.0f)
+        {
+            //oof p2
         }
     }
 
@@ -74,24 +82,41 @@ public class RoundManager : MonoBehaviour {
     //resets bool values for pre-round
     private void RoundReset () {
 
+        CameraTurnManager();
+
         P1.GetComponent<PlayerManager> ().resetPieces ();
         P2.GetComponent<PlayerManager> ().resetPieces ();
 
         P1.GetComponent<PlayerManager> ().SetWonRound (false);
         P1.GetComponent<PlayerManager> ().SetHasEnded (false);
+        P1.GetComponent<PlayerManager>().setCanSpawn(true);
 
         P2.GetComponent<PlayerManager> ().SetWonRound (false);
         P2.GetComponent<PlayerManager> ().SetHasEnded (false);
+        P2.GetComponent<PlayerManager>().setCanSpawn(true);
+
 
         roundCount++;
-        currBattleTimer = startBattleTimer;
-        BattleCameraActive = false;
+        BattleActive = false;
     }
+
 
     public void CameraTurnManager () {
 
         bool p1HasEnded = P1.GetComponent<PlayerManager> ().GetHasEnded ();
         bool p2HasEnded = P2.GetComponent<PlayerManager> ().GetHasEnded ();
+
+        bool p1HasWonPrevious = P1.GetComponent<PlayerManager>().GetWonRound();
+        bool p2HasWonPrevious = P2.GetComponent<PlayerManager>().GetWonRound();
+        
+        //checks who won from the previous round (excludes 1st round) to determine which player goes first on roundCount > 1
+        if(p1HasWonPrevious == true && p2HasWonPrevious == false)
+        {
+            SwitchToP1();
+        } else
+        {
+            SwitchToP2();
+        }
 
         //Player 1 hasGone Player 2 has not, switch to Player 2 Cam
         if (p1HasEnded == true && p2HasEnded == false) {
@@ -132,7 +157,7 @@ public class RoundManager : MonoBehaviour {
         P1Camera.SetActive (false);
         P2Camera.SetActive (false);
         BattleCamera.SetActive (true);
-        BattleCameraActive = true;
+        BattleActive = true;
 
     }
 }

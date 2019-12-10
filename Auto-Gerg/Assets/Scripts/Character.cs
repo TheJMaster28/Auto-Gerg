@@ -43,17 +43,24 @@ public class Character : MonoBehaviour {
     [SerializeField]
     private string charRace;
 
+   
     // Tile positions
     public static Vector3 position;
     public static Vector3 baseSub = new Vector3 (0f, -.5f, 0);
     public static Vector3 basePosition;
 
     public GameObject Tile;
-    public bool isdead;
+    public bool isdead = false;
+    
 
     // functions for awake and accessing stats
     private void Awake () {
         health = healthMax;
+    }
+
+    public bool getIsDead ()
+    {
+        return isdead;
     }
 
     public float getAttackDamage () {
@@ -90,6 +97,11 @@ public class Character : MonoBehaviour {
     public void revertHealth () {
         health = healthMax;
         isdead = false;
+    }
+
+    public void setIsDead(bool d)
+    {
+        isdead = d;
     }
 
     // Need to have this so I know the position for the piece at all times.

@@ -57,7 +57,7 @@ public class CharacterAI : MonoBehaviour {
 
     void Update () {
 
-        if (rm.BattleCameraActive == false) {
+        if (rm.BattleActive == false) {
             // might want to change this when we get a implementation of it as ti will restrict dragging characters
             // if (orginalTile != null) { GoBackToOrginalTile (); }
 
@@ -75,12 +75,12 @@ public class CharacterAI : MonoBehaviour {
         }
 
         // if you can move and we are in battle mode, move
-        if (moveTurn && rm.BattleCameraActive == true) {
+        if (moveTurn && rm.BattleActive == true) {
             Move ();
 
         }
         // otherwise we attack
-        else if (rm.BattleCameraActive == true) {
+        else if (rm.BattleActive == true) {
             Attack ();
         }
 

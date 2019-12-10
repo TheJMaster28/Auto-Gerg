@@ -9,11 +9,10 @@ public class PlayerManager : MonoBehaviour {
     public List<GameObject> activeFieldMonsters = new List<GameObject> ();
 
     //defaults
-    private float Health = 100.0f;
+    public float Health = 100.0f;
     private bool hasWonRound = false;
     private bool canSpawn = true;
-    public bool hasEnded = false;
-    private int bladeMasterSynergyCount = 5;
+    private bool hasEnded = false;
 
     // Start is called before the first frame update
     void Awake () {
@@ -23,6 +22,11 @@ public class PlayerManager : MonoBehaviour {
     // Update is called once per frame
     void Update () {
          
+    }
+
+    public float getHealth()
+    {
+        return Health;
     }
 
     public void SetWonRound (bool wr) {
@@ -46,10 +50,6 @@ public class PlayerManager : MonoBehaviour {
         Health = Health - takeDmg;
     }
 
-    public int getBladeMasterSynergyCount () {
-        return bladeMasterSynergyCount;
-    }
-
     public void setCanSpawn (bool s) {
         canSpawn = s;
     }
@@ -67,15 +67,26 @@ public class PlayerManager : MonoBehaviour {
         foreach (GameObject chara in activeFieldMonsters) {
             chara.GetComponent<CharacterAI> ().GoBackToOrginalTile ();
             chara.GetComponent<Character> ().revertHealth ();
+            chara.GetComponent<Character>().setIsDead(false);
         }
 
     }
 
     public bool checkAllDeadMonsters()
     {
-        bool alive;
-        //return false if we find at least on not dead monster
-        
+        //return false for 1st round, when there are no monsters spawned yet
+        int currentRound = GameObject.FindGameObjectWithTag("RoundManager").GetComponent<RoundManager>().roundCount;
+        bool activeBattle = GameObject.FindGameObjectWithTag("RoundManager").GetComponent<RoundManager>().BattleActive;
+        if (currentRound == 1 && activeBattle == false) return false;
+
+        //return false if we find at least one not dead monster
+        foreach (GameObject chara in activeFieldMonsters)
+        {
+            if (chara.GetComponent<Character>().getIsDead() == false)
+                return false;
+        }
+
+        //at this point all monsters in activeField are dead
         return true;
     }
 

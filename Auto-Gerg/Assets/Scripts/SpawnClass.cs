@@ -154,10 +154,10 @@ public class SpawnClass : MonoBehaviour {
             if (obj1 == "Blademaster") BSynInc1++; //player 1 blademaster syn increase 
 
             string obj2 = newGO.GetComponent<Character>().getClass();
-            if (obj2 == "Ranger") RSynInc1++; //player 1 blademaster syn increase 
+            if (obj2 == "Ranger") RSynInc1++; //player 1 Ranger syn increase 
 
             string obj3 = newGO.GetComponent<Character>().getClass();
-            if (obj2 == "Gunslinger") GSynInc1++; //player 1 blademaster syn increase 
+            if (obj2 == "Gunslinger") GSynInc1++; //player 1 Gunslinger syn increase 
             
         } else if (P2CanSpawn == true && P1.GetComponent<PlayerManager>().GetHasEnded() == true) {  
         //else if (P2CanSpawn == true && P1CanSpawn == false) {
@@ -171,13 +171,13 @@ public class SpawnClass : MonoBehaviour {
             Debug.Log ("added blademaster to P2 active field list!");
 
             string obj4 = newGO.GetComponent<Character>().getClass();
-            if (obj4 == "Blademaster") BSynInc2++; //player 1 blademaster syn increase 
+            if (obj4 == "Blademaster") BSynInc2++; //player 2 blademaster syn increase 
 
             string obj5 = newGO.GetComponent<Character>().getClass();
-            if (obj5 == "Ranger") RSynInc2++; //player 1 blademaster syn increase 
+            if (obj5 == "Ranger") RSynInc2++; //player 2 Ranger syn increase 
 
             string obj6 = newGO.GetComponent<Character>().getClass();
-            if (obj6 == "Gunslinger") GSynInc2++; //player 1 blademaster syn increase 
+            if (obj6 == "Gunslinger") GSynInc2++; //player 2 Gunslinger syn increase 
         }
 
         //USED FOR MOUSE POSITION NOT IN USE NOW
