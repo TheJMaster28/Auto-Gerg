@@ -7,7 +7,6 @@ public class StatHelper : MonoBehaviour
 {
     public GameObject statCanvas;
     public Text statText;
-    public bool isSet = false;
 
 
     void Update()
@@ -28,8 +27,11 @@ public class StatHelper : MonoBehaviour
         if(Input.GetMouseButtonDown(1))
         {
             Debug.Log ("right click");
-            isSet = !isSet;
-            statCanvas.SetActive (isSet);
+            statCanvas.SetActive (true);
         }
+    }
+    void OnMouseExit()
+    {
+        statCanvas.SetActive(false);
     }
 }
