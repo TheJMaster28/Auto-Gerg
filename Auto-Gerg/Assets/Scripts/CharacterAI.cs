@@ -81,6 +81,7 @@ public class CharacterAI : MonoBehaviour {
         }
         // otherwise we attack
         else if (rm.BattleActive == true) {
+
             Attack ();
         }
 
@@ -118,6 +119,7 @@ public class CharacterAI : MonoBehaviour {
                     enemy.GetComponent<Character> ().health -= modifiedDamage;
                 else
                     enemy.GetComponent<Character> ().health -= 1;
+                // characterScript.playAttack ();
 
             }
 

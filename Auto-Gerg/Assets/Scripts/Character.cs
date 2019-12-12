@@ -53,6 +53,8 @@ public class Character : MonoBehaviour {
 
     public AudioClip deathSound;
 
+    public AudioClip attackSound;
+
     private AudioSource s;
 
     // functions for awake and accessing stats
@@ -64,10 +66,10 @@ public class Character : MonoBehaviour {
     public bool getIsDead () {
         return isdead;
     }
-    public float getHealthMax(){
+    public float getHealthMax () {
         return healthMax;
     }
-    public float getHealth(){
+    public float getHealth () {
         return health;
     }
     public float getAttackDamage () {
@@ -108,6 +110,11 @@ public class Character : MonoBehaviour {
 
     public void setIsDead (bool d) {
         isdead = d;
+    }
+
+    public void playAttack () {
+        s.clip = attackSound;
+        s.Play ();
     }
 
     // Need to have this so I know the position for the piece at all times.

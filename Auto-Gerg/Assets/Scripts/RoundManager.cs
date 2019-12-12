@@ -62,7 +62,7 @@ public class RoundManager : MonoBehaviour {
                 P1.GetComponent<PlayerManager> ().SetWonRound (false);
                 //UI Announce P1 round winner
                 //P2 take damage
-                P2.GetComponent<PlayerManager> ().TakeDamage (10);
+                P1.GetComponent<PlayerManager> ().TakeDamage (10);
                 SwitchToP2 ();
                 RoundReset ();
 
@@ -71,7 +71,7 @@ public class RoundManager : MonoBehaviour {
                 P2.GetComponent<PlayerManager> ().SetWonRound (false);
                 //UI Announce P2 as round winner
                 //P1 take damage
-                P1.GetComponent<PlayerManager> ().TakeDamage (10);
+                P2.GetComponent<PlayerManager> ().TakeDamage (10);
                 SwitchToP1 ();
                 RoundReset ();
 
@@ -95,7 +95,7 @@ public class RoundManager : MonoBehaviour {
     }
 
     private void LateUpdate () {
-        Debug.Log ("LateUpdateRM");
+
         if (nextTurn) {
             CameraTurnManager ();
         }
