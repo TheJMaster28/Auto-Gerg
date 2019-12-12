@@ -60,8 +60,9 @@ public class CharacterAI : MonoBehaviour {
         if (rm.BattleActive == false) {
             // might want to change this when we get a implementation of it as ti will restrict dragging characters
             // if (orginalTile != null) { GoBackToOrginalTile (); }
-
-            orginalTile = characterScript.Tile;
+            if (characterScript.Tile != null) {
+                orginalTile = characterScript.Tile;
+            }
 
         }
 
@@ -69,6 +70,7 @@ public class CharacterAI : MonoBehaviour {
         characterScript = gameObject.GetComponent<Character> ();
         groundScript = characterScript.Tile.GetComponent<GroundTiles> ();
 
+        characterScript.isMoving = true;
         // if character is dead, no AI
         if (characterScript.isdead) {
             return;
@@ -322,11 +324,10 @@ public class CharacterAI : MonoBehaviour {
     }
 
     public void GoBackToOrginalTile () {
-
-        orginalTile.GetComponent<GroundTiles> ().chessPiece = gameObject;
-
         // remove refernce from old tile
         groundScript.chessPiece = null;
+
+        orginalTile.GetComponent<GroundTiles> ().chessPiece = gameObject;
 
         // move gameobject to the new tile
         transform.position = orginalTile.GetComponent<GroundTiles> ().topPosition + new Vector3 (0f, .5f, 0f);

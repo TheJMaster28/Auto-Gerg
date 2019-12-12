@@ -66,6 +66,7 @@ public class PlayerManager : MonoBehaviour {
             chara.GetComponent<Character> ().setIsDead (false);
             chara.GetComponent<CharacterAI> ().GoBackToOrginalTile ();
             chara.GetComponent<Character> ().revertHealth ();
+            chara.GetComponent<Character> ().isMoving = false;
         }
 
     }

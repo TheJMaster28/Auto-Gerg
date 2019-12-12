@@ -108,6 +108,8 @@ public class Character : MonoBehaviour {
     public void revertHealth () {
         health = healthMax;
         isdead = false;
+        // isMoving = false;
+
     }
 
     public void setIsDead (bool d) {
@@ -126,13 +128,11 @@ public class Character : MonoBehaviour {
 
         if (health < 0 && !isdead) {
             isdead = true;
-            isMoving = true;
             Tile.GetComponent<GroundTiles> ().chessPiece = null;
             s.clip = deathSound;
             s.Play ();
             print ("DEAD!!!!!");
             transform.position += new Vector3 (0, -1f, 0);
-            isMoving = false;
         }
     }
 

@@ -10,12 +10,29 @@ public class TileSnapCharacter : MonoBehaviour {
     /// </summary>
     /// <param name="other">The other Collider involved in this collision.</param>
     void OnTriggerStay (Collider other) {
-        Debug.Log (other.gameObject.name);
+
         if (!other.gameObject.GetComponent<Character> ().isMoving) {
-            other.gameObject.transform.position = gameObject.GetComponent<GroundTiles> ().topPosition + new Vector3 (0f, .5f, 0f);
-            gameObject.GetComponent<GroundTiles> ().chessPiece = other.gameObject;
-            other.gameObject.GetComponent<Character> ().Tile = gameObject;
+
+            if (gameObject.GetComponent<GroundTiles> ().chessPiece != null) {
+
+                MovePiece (other.gameObject, other.gameObject.GetComponent<CharacterAI> ().orginalTile);
+                return;
+
+            }
+
+            MovePiece (other.gameObject, gameObject);
+            // other.gameObject.transform.position = gameObject.GetComponent<GroundTiles> ().topPosition + new Vector3 (0f, .5f, 0f);
+            // gameObject.GetComponent<GroundTiles> ().chessPiece = other.gameObject;
+            // other.gameObject.GetComponent<Character> ().Tile = gameObject;
         }
 
+    }
+    void MovePiece (GameObject piece, GameObject tile) {
+        piece.transform.position = tile.GetComponent<GroundTiles> ().topPosition + new Vector3 (0f, .5f, 0f);
+        if (piece.GetComponent<Character> ().Tile != null) {
+            piece.GetComponent<Character> ().Tile.GetComponent<GroundTiles> ().chessPiece = null;
+        }
+        tile.GetComponent<GroundTiles> ().chessPiece = piece;
+        piece.GetComponent<Character> ().Tile = tile;
     }
 }
