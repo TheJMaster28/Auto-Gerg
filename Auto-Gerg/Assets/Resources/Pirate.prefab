@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 385924567183324374}
   - component: {fileID: 9118146068162665708}
   - component: {fileID: 2833298767475580495}
+  - component: {fileID: -7998861886549399635}
   m_Layer: 0
   m_Name: Pirate
   m_TagString: TestPiece1
@@ -124,9 +125,11 @@ MonoBehaviour:
   healthRegenPercentage: 0
   charClass: Gunslinger
   charRace: Seafolk
+  isMoving: 0
   Tile: {fileID: 0}
   isdead: 0
   deathSound: {fileID: 8300000, guid: 321e1aec57a02684db012ae444ebf707, type: 3}
+  attackSound: {fileID: 0}
 --- !u!114 &7804292528050714917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +273,22 @@ MonoBehaviour:
   statCanvas: {fileID: 2199638545230987802}
   statText: {fileID: 3938058860030025452}
   isSet: 0
+--- !u!54 &-7998861886549399635
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365521035745927661}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &768753928046049762
 GameObject:
   m_ObjectHideFlags: 0

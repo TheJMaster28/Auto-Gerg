@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4812303194285803819}
   - component: {fileID: 5241248715717626852}
   - component: {fileID: 35973755921115013}
+  - component: {fileID: 6757062289880527192}
   m_Layer: 8
   m_Name: Terminator
   m_TagString: Player1
@@ -124,9 +125,11 @@ MonoBehaviour:
   healthRegenPercentage: 0
   charClass: Gunslinger
   charRace: Robot
+  isMoving: 0
   Tile: {fileID: 0}
   isdead: 0
   deathSound: {fileID: 8300000, guid: 321e1aec57a02684db012ae444ebf707, type: 3}
+  attackSound: {fileID: 0}
 --- !u!114 &5162307785513761991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +273,22 @@ MonoBehaviour:
   statCanvas: {fileID: 1424426726319747192}
   statText: {fileID: 8749376846978119751}
   isSet: 0
+--- !u!54 &6757062289880527192
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286103526358011105}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &1424426726319747192
 GameObject:
   m_ObjectHideFlags: 0

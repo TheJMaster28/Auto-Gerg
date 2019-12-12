@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6068955742625800003}
   - component: {fileID: 8481772262074431364}
   - component: {fileID: 291307077598692603}
+  - component: {fileID: -9105475357203051077}
   m_Layer: 0
   m_Name: Sniper
   m_TagString: TestPiece1
@@ -124,9 +125,11 @@ MonoBehaviour:
   healthRegenPercentage: 0
   charClass: Gunslinger
   charRace: Human
+  isMoving: 0
   Tile: {fileID: 0}
   isdead: 0
   deathSound: {fileID: 8300000, guid: 321e1aec57a02684db012ae444ebf707, type: 3}
+  attackSound: {fileID: 0}
 --- !u!114 &4076383446063980629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +273,22 @@ MonoBehaviour:
   statCanvas: {fileID: 4561649686153536834}
   statText: {fileID: 7145789093644194830}
   isSet: 0
+--- !u!54 &-9105475357203051077
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35811413603834314}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &2450135073363370548
 GameObject:
   m_ObjectHideFlags: 0

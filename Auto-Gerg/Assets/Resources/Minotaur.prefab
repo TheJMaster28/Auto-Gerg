@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 8796755358604025982}
   - component: {fileID: 5047496266545525237}
   - component: {fileID: 5481406837631209238}
+  - component: {fileID: -755308841163891300}
   m_Layer: 8
   m_Name: Minotaur
   m_TagString: Player1
@@ -223,9 +224,11 @@ MonoBehaviour:
   healthRegenPercentage: 0
   charClass: Blademaster
   charRace: Twisted
+  isMoving: 0
   Tile: {fileID: 0}
   isdead: 0
   deathSound: {fileID: 8300000, guid: 321e1aec57a02684db012ae444ebf707, type: 3}
+  attackSound: {fileID: 0}
 --- !u!114 &3893552765047539422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,6 +372,22 @@ MonoBehaviour:
   statCanvas: {fileID: 483874079511795731}
   statText: {fileID: 3309129323945413821}
   isSet: 0
+--- !u!54 &-755308841163891300
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958711912900439837}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &5545462111601469799
 GameObject:
   m_ObjectHideFlags: 0

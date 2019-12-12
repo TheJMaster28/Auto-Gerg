@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 2549334187822802655}
   - component: {fileID: 2095388015087328528}
   - component: {fileID: 7656522570596987967}
+  - component: {fileID: -7611332326238844736}
   m_Layer: 0
   m_Name: Bushido
   m_TagString: TestPiece1
@@ -218,9 +219,11 @@ MonoBehaviour:
   healthRegenPercentage: 0
   charClass: Blademaster
   charRace: Undead
+  isMoving: 0
   Tile: {fileID: 0}
   isdead: 0
   deathSound: {fileID: 8300000, guid: 321e1aec57a02684db012ae444ebf707, type: 3}
+  attackSound: {fileID: 0}
 --- !u!114 &6904735463009424012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,6 +367,22 @@ MonoBehaviour:
   statCanvas: {fileID: 8977954603881825339}
   statText: {fileID: 4099986613231171897}
   isSet: 0
+--- !u!54 &-7611332326238844736
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951265757913512008}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &3094968771205687420
 GameObject:
   m_ObjectHideFlags: 0

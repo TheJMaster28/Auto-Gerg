@@ -48,6 +48,8 @@ public class Character : MonoBehaviour {
     public static Vector3 baseSub = new Vector3 (0f, -.5f, 0);
     public static Vector3 basePosition;
 
+    public bool isMoving = false;
+
     public GameObject Tile;
     public bool isdead = false;
 
@@ -124,11 +126,13 @@ public class Character : MonoBehaviour {
 
         if (health < 0 && !isdead) {
             isdead = true;
+            isMoving = true;
             Tile.GetComponent<GroundTiles> ().chessPiece = null;
             s.clip = deathSound;
             s.Play ();
             print ("DEAD!!!!!");
             transform.position += new Vector3 (0, -1f, 0);
+            isMoving = false;
         }
     }
 
