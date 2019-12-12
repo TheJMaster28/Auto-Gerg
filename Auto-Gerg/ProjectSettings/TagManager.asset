@@ -17,6 +17,8 @@ TagManager:
   - Blademaster_SynIcon_P2
   - Ranger_SynIcon_P2
   - Gunslinger_SynIcon_P2
+  - PlayerManager1
+  - PlayerManager2
   layers:
   - Default
   - TransparentFX
