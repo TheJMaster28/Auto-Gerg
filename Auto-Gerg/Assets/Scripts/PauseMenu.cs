@@ -51,4 +51,9 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Quiting Game.... ");
         Application.Quit();
     }
+
+    public void Rematch()
+    {
+        SceneManager.LoadScene("MatchScene");
+    }
 }

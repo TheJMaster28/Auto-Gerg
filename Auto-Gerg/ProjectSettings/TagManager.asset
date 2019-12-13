@@ -4,11 +4,24 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Board
-  - GroundTile
-  - TestPiece1
-  - TestPiece2
   - RoundManager
+  - Board
+  - TestPiece1
+  - Player2
+  - GroundTile
+  - TestPiece2
+  - Player1
+  - Blademaster_SynIcon_P1
+  - Ranger_SynIcon_P1
+  - Gunslinger_SynIcon_P1
+  - Blademaster_SynIcon_P2
+  - Ranger_SynIcon_P2
+  - Gunslinger_SynIcon_P2
+  - PlayerManager1
+  - PlayerManager2
+  - GameOver
+  - winnerp2text
+  - winnerp1text
   layers:
   - Default
   - TransparentFX
@@ -20,7 +33,7 @@ TagManager:
   - 
   - Player1
   - Player2
-  - 
+  - Ground
   - 
   - 
   - 

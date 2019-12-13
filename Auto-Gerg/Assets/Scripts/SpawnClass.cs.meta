@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a9e35df685e3d9545a4c396546459800
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - bladeMaster: {fileID: 4378888575533256546, guid: 7d1943fa1e9dd6747b94b91fd4f5c597,
+      type: 3}
+  - Ranger: {fileID: 4378888575533256546, guid: 61bd0a122b14bb8449bd3e9ee6c3f24a,
+      type: 3}
+  - Gunslinger: {fileID: 4378888575533256546, guid: 26f29baf4ee90c4408596e8c489ff368,
+      type: 3}
+  - objectToMove: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
