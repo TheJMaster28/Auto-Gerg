@@ -11,17 +11,6 @@ public class RoundManager : MonoBehaviour {
     public GameObject P2;
     public GameObject BattleCamera;
 
-<<<<<<< HEAD
-    private int roundCount = 0;
-
-    public static float startBattleTimer = 5.0f;
-    float currBattleTimer = startBattleTimer;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-   
-=======
     public int roundCount;
 
     public bool BattleActive;
@@ -46,7 +35,6 @@ public class RoundManager : MonoBehaviour {
         P1.GetComponent<PlayerManager> ().setCanSpawn (true);
         P2.GetComponent<PlayerManager> ().setCanSpawn (false);
         SwitchToP1 ();
->>>>>>> dev
     }
 
     // Update is called once per frame
@@ -100,15 +88,12 @@ public class RoundManager : MonoBehaviour {
             // }
 
             //Be checking for ultimate winner
-            if (P1.GetComponent<PlayerManager>().getHealth() <= 0.0f)
-            {
+            if (P1.GetComponent<PlayerManager> ().getHealth () <= 0.0f) {
                 //oof p1
-                GameOver("Player 2!");
-            }
-            else if (P2.GetComponent<PlayerManager>().getHealth() <= 0.0f)
-            {
+                GameOver ("Player 2!");
+            } else if (P2.GetComponent<PlayerManager> ().getHealth () <= 0.0f) {
                 //oof p2
-                GameOver("Player 1!");
+                GameOver ("Player 1!");
             }
         }
     }
@@ -144,12 +129,8 @@ public class RoundManager : MonoBehaviour {
         P2.GetComponent<PlayerManager> ().SetHasEnded (false);
         // P2.GetComponent<PlayerManager> ().setCanSpawn (true);
 
-<<<<<<< HEAD
-        currBattleTimer = startBattleTimer;
-=======
         roundCount++;
         BattleActive = false;
->>>>>>> dev
     }
 
     public void CameraTurnManager () {
@@ -227,28 +208,15 @@ public class RoundManager : MonoBehaviour {
 
     }
 
-    public void GameOver(string winner)
-    {
-<<<<<<< HEAD
-        P1Camera.SetActive(false);
-        P2Camera.SetActive(false);
-        BattleCamera.SetActive(true);
-
-        
-        
-=======
-        SwitchToBattle();
-        gameOver.SetActive(true);
-        if(winner == "Player 1!")
-        {
-            GameObject winnertextp2 = GameObject.FindGameObjectWithTag("winnerp2text");
-            winnertextp2.SetActive(false);
+    public void GameOver (string winner) {
+        SwitchToBattle ();
+        gameOver.SetActive (true);
+        if (winner == "Player 1!") {
+            GameObject winnertextp2 = GameObject.FindGameObjectWithTag ("winnerp2text");
+            winnertextp2.SetActive (false);
+        } else {
+            GameObject winnertextp1 = GameObject.FindGameObjectWithTag ("winnerp1text");
+            winnertextp1.SetActive (false);
         }
-        else
-        {
-            GameObject winnertextp1 = GameObject.FindGameObjectWithTag("winnerp1text");
-            winnertextp1.SetActive(false);
-        }
->>>>>>> dev
     }
 }
