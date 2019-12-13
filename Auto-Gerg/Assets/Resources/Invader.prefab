@@ -116,12 +116,12 @@ MonoBehaviour:
   health: 550
   magicMax: 100
   magic: 0
-  attackDamage: 65
+  attackDamage: 75
   attackType: Magical
   armor: 15
   resistance: 18
   attackRange: 3
-  attackSpeed: 0.6
+  attackSpeed: 0.7
   healthRegenPercentage: 0
   charClass: Gunslinger
   charRace: Alien

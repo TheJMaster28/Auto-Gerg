@@ -116,12 +116,12 @@ MonoBehaviour:
   health: 550
   magicMax: 75
   magic: 0
-  attackDamage: 75
+  attackDamage: 80
   attackType: Physical
   armor: 20
   resistance: 10
   attackRange: 3
-  attackSpeed: 0.75
+  attackSpeed: 0.8
   healthRegenPercentage: 0
   charClass: Gunslinger
   charRace: Seafolk

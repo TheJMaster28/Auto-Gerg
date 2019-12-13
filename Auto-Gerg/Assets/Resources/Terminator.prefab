@@ -116,12 +116,12 @@ MonoBehaviour:
   health: 600
   magicMax: 100
   magic: 0
-  attackDamage: 70
+  attackDamage: 105
   attackType: Physical
   armor: 30
   resistance: 10
   attackRange: 3
-  attackSpeed: 0.65
+  attackSpeed: 0.95
   healthRegenPercentage: 0
   charClass: Gunslinger
   charRace: Robot

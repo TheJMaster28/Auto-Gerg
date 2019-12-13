@@ -112,16 +112,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adf2a7dbe489bc04fbcf27738be7365e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthMax: 500
-  health: 500
+  healthMax: 350
+  health: 350
   magicMax: 100
   magic: 0
-  attackDamage: 75
+  attackDamage: 85
   attackType: Physical
-  armor: 15
-  resistance: 15
+  armor: 10
+  resistance: 10
   attackRange: 5
-  attackSpeed: 0.6
+  attackSpeed: 0.9
   healthRegenPercentage: 0
   charClass: Gunslinger
   charRace: Human

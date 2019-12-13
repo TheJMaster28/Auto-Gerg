@@ -121,7 +121,7 @@ MonoBehaviour:
   armor: 15
   resistance: 15
   attackRange: 3
-  attackSpeed: 0.75
+  attackSpeed: 0.6
   healthRegenPercentage: 0
   charClass: Ranger
   charRace: Fey

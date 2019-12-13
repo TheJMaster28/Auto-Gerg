@@ -116,12 +116,12 @@ MonoBehaviour:
   health: 600
   magicMax: 100
   magic: 0
-  attackDamage: 68
+  attackDamage: 88
   attackType: Physical
   armor: 18
   resistance: 10
   attackRange: 3
-  attackSpeed: 0.6
+  attackSpeed: 0.85
   healthRegenPercentage: 0
   charClass: Gunslinger
   charRace: Pirate

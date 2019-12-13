@@ -116,12 +116,12 @@ MonoBehaviour:
   health: 650
   magicMax: 100
   magic: 0
-  attackDamage: 80
+  attackDamage: 130
   attackType: Physical
-  armor: 25
-  resistance: 14
+  armor: 27
+  resistance: 12
   attackRange: 3
-  attackSpeed: 1
+  attackSpeed: 1.5
   healthRegenPercentage: 0
   charClass: Gunslinger
   charRace: Twisted

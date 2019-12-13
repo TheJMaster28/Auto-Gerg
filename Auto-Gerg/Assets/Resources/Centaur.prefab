@@ -116,7 +116,7 @@ MonoBehaviour:
   health: 550
   magicMax: 100
   magic: 0
-  attackDamage: 60
+  attackDamage: 70
   attackType: Magical
   armor: 30
   resistance: 25
