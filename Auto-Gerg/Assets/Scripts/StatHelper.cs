@@ -6,20 +6,30 @@ using UnityEngine.UI;
 public class StatHelper : MonoBehaviour
 {
     public GameObject statCanvas;
-    public Text statText;
+    public Text charName;
+    public Text statLeft;
+    public Text statRight;
 
 
     void Update()
     {
-        statText.text =
-        "CharacterName: " + gameObject.name + "\n" +
-        "Class: " + gameObject.GetComponent<Character>().getClass() + "\n"+
-        "Health: " + gameObject.GetComponent<Character>().getHealth() + "/" + gameObject.GetComponent<Character>().getHealthMax() + "          " + 
+        //enter character name and class into first text box
+        charName.text =
+        "Character Name: " + gameObject.name.Substring(0,gameObject.name.IndexOf("(")) + "\n" +
+        "Class: " + gameObject.GetComponent<Character>().getClass() + "\n";
+        
+        //enter character health, attack speed, and damage into left text box
+        statLeft.text =
+        "Health: " + gameObject.GetComponent<Character>().getHealth() + "/" + gameObject.GetComponent<Character>().getHealthMax() + "\n" +
+        "Attack Speed: " + gameObject.GetComponent<Character>().getAttackSpeed() + "\n" +
+        "Attack Damage: " + gameObject.GetComponent<Character>().getAttackDamage();
+
+        //enter character armor, resistance, and attack type to right text box
+        statRight.text =
         "Armor: " + gameObject.GetComponent<Character>().getArmor() + "\n" +
-        "Attack Speed: " + gameObject.GetComponent<Character>().getAttackSpeed() + "        " +
         "Resistance: " + gameObject.GetComponent<Character>().getResistance() + "\n" +
-        "Attack Damage: " + gameObject.GetComponent<Character>().getAttackType() + "        " +
         "Attack Type: " + gameObject.GetComponent<Character>().getAttackType();
+        //statText.text = statText.text.Substring(0,statText.text.IndexOf("(")) + statText.text.Substring(statText.text.IndexOf(")"),statText.text.Length-1);
     }
     void OnMouseOver()
     {
