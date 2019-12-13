@@ -116,12 +116,12 @@ MonoBehaviour:
   health: 650
   magicMax: 100
   magic: 0
-  attackDamage: 60
+  attackDamage: 80
   attackType: Physical
-  armor: 40
-  resistance: 24
+  armor: 25
+  resistance: 14
   attackRange: 3
-  attackSpeed: 0.55
+  attackSpeed: 1
   healthRegenPercentage: 0
   charClass: Gunslinger
   charRace: Twisted
@@ -272,7 +272,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statCanvas: {fileID: 656833978066021840}
   statText: {fileID: 336601123726317076}
-  isSet: 0
 --- !u!54 &6447123737154647643
 Rigidbody:
   m_ObjectHideFlags: 0
