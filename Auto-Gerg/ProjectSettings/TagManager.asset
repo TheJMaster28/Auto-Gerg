@@ -19,6 +19,9 @@ TagManager:
   - Gunslinger_SynIcon_P2
   - PlayerManager1
   - PlayerManager2
+  - GameOver
+  - winnerp2text
+  - winnerp1text
   layers:
   - Default
   - TransparentFX

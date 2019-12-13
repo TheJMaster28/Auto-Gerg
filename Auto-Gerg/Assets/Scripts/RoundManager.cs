@@ -26,6 +26,8 @@ public class RoundManager : MonoBehaviour {
 
     public GameObject player_2_Characters;
 
+    public GameObject gameOver;
+
     // Start is called before the first frame update
     void Awake () {
         roundCount = 1;
@@ -84,13 +86,18 @@ public class RoundManager : MonoBehaviour {
             // } else if (p2HasWonPrevious == true && p1HasWonPrevious == false && roundCount > 1) {
             //     SwitchToP2 ();
             // }
-        }
 
-        //Be checking for ultimate winner
-        if (P1.GetComponent<PlayerManager> ().getHealth () < 0.0f) {
-            //oof p1
-        } else if (P2.GetComponent<PlayerManager> ().getHealth () < 0.0f) {
-            //oof p2
+            //Be checking for ultimate winner
+            if (P1.GetComponent<PlayerManager>().getHealth() <= 0.0f)
+            {
+                //oof p1
+                GameOver("Player 2!");
+            }
+            else if (P2.GetComponent<PlayerManager>().getHealth() <= 0.0f)
+            {
+                //oof p2
+                GameOver("Player 1!");
+            }
         }
     }
 
@@ -202,5 +209,21 @@ public class RoundManager : MonoBehaviour {
             cc.changeImage ();
         }
 
+    }
+
+    public void GameOver(string winner)
+    {
+        SwitchToBattle();
+        gameOver.SetActive(true);
+        if(winner == "Player 1!")
+        {
+            GameObject winnertextp2 = GameObject.FindGameObjectWithTag("winnerp2text");
+            winnertextp2.SetActive(false);
+        }
+        else
+        {
+            GameObject winnertextp1 = GameObject.FindGameObjectWithTag("winnerp1text");
+            winnertextp1.SetActive(false);
+        }
     }
 }
