@@ -116,10 +116,10 @@ MonoBehaviour:
   health: 600
   magicMax: 100
   magic: 0
-  attackDamage: 35
+  attackDamage: 55
   attackType: Physical
-  armor: 35
-  resistance: 20
+  armor: 25
+  resistance: 10
   attackRange: 1
   attackSpeed: 0.6
   healthRegenPercentage: 0
@@ -272,7 +272,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statCanvas: {fileID: 8059247564246952876}
   statText: {fileID: 7092713116158611560}
-  isSet: 0
 --- !u!54 &6755309059895716859
 Rigidbody:
   m_ObjectHideFlags: 0

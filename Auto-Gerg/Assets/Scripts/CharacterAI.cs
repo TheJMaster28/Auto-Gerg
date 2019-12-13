@@ -98,7 +98,7 @@ public class CharacterAI : MonoBehaviour {
         // timer ran out, attack
         if (attackTime < 0) {
 
-            print ("ATTACK!");
+            //print ("ATTACK!");
 
             // find enemy within range
             GameObject enemy = EnemyWithinRange ();
@@ -117,10 +117,10 @@ public class CharacterAI : MonoBehaviour {
                     print ("Set a proper Character Attack Type");
 
                 //deal modifiedDamage to enemy
-                if (modifiedDamage > 0)
+                if (modifiedDamage > 10)
                     enemy.GetComponent<Character> ().health -= modifiedDamage;
                 else
-                    enemy.GetComponent<Character> ().health -= 1;
+                    enemy.GetComponent<Character> ().health -= 10;
                 // characterScript.playAttack ();
 
             }

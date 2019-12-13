@@ -309,12 +309,12 @@ MonoBehaviour:
   health: 700
   magicMax: 100
   magic: 0
-  attackDamage: 55
+  attackDamage: 75
   attackType: Magical
-  armor: 35
-  resistance: 30
+  armor: 15
+  resistance: 10
   attackRange: 1
-  attackSpeed: 0.55
+  attackSpeed: 0.75
   healthRegenPercentage: 0
   charClass: Blademaster
   charRace: Celestial
@@ -465,7 +465,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statCanvas: {fileID: 118240723271621461}
   statText: {fileID: 118240722453935290}
-  isSet: 0
 --- !u!54 &118240723294622656
 Rigidbody:
   m_ObjectHideFlags: 0
